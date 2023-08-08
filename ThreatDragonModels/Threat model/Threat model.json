@@ -38,8 +38,8 @@
             },
             "visible": true,
             "shape": "actor",
-            "id": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd",
             "zIndex": 1,
+            "id": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd",
             "data": {
               "type": "tm.Actor",
               "name": "Staff",
@@ -80,15 +80,15 @@
               "threats": []
             },
             "id": "68fc13d9-7574-45fc-9d65-3faee0306802",
+            "labels": [
+              "User Details"
+            ],
             "source": {
               "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
             },
             "target": {
               "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
             },
-            "labels": [
-              "User Details"
-            ],
             "vertices": [
               {
                 "x": 410,
@@ -125,15 +125,15 @@
               "threats": []
             },
             "id": "663e6e89-0b8a-4c8c-a4ec-f8ae6fde338e",
+            "labels": [
+              "Hashed Password"
+            ],
             "source": {
               "cell": "119e4316-ceb6-4752-861b-9d86c283d03f"
             },
             "target": {
               "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
             },
-            "labels": [
-              "Hashed Password"
-            ],
             "vertices": [
               {
                 "x": 690,
@@ -170,6 +170,9 @@
               "threats": []
             },
             "id": "2149346a-a7bb-4b28-bf56-9ca662abad5b",
+            "labels": [
+              "Authentication Token"
+            ],
             "source": {
               "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
             },
@@ -189,9 +192,6 @@
                 "x": 320,
                 "y": 110
               }
-            ],
-            "labels": [
-              "Authentication Token"
             ]
           },
           {
@@ -223,6 +223,9 @@
               "threats": []
             },
             "id": "4670f34f-9210-44f7-ac85-bcbd39041ade",
+            "labels": [
+              "Authentication Token"
+            ],
             "source": {
               "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
             },
@@ -242,9 +245,6 @@
                 "x": 760,
                 "y": 110
               }
-            ],
-            "labels": [
-              "Authentication Token"
             ]
           },
           {
@@ -276,15 +276,15 @@
               "threats": []
             },
             "id": "2dc5ff95-0504-4ab7-930b-4394a2537f86",
+            "labels": [
+              "Request\n"
+            ],
             "source": {
               "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
             },
             "target": {
               "cell": "4d1d97f6-c851-43ba-9e9a-0bdf3addfc35"
             },
-            "labels": [
-              "Request\n"
-            ],
             "vertices": [
               {
                 "x": 420,
@@ -321,15 +321,15 @@
               "threats": []
             },
             "id": "419f88c8-4236-4064-a21a-6f3d0194c8ab",
+            "labels": [
+              "Authentication Token"
+            ],
             "source": {
               "cell": "119e4316-ceb6-4752-861b-9d86c283d03f"
             },
             "target": {
               "cell": "4d1d97f6-c851-43ba-9e9a-0bdf3addfc35"
-            },
-            "labels": [
-              "Authentication Token"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -360,6 +360,9 @@
               "threats": []
             },
             "id": "4f893cf8-82c0-45b2-91bb-963a47ae4f84",
+            "labels": [
+              "Request\n"
+            ],
             "source": {
               "cell": "4d1d97f6-c851-43ba-9e9a-0bdf3addfc35"
             },
@@ -371,9 +374,6 @@
                 "x": 620,
                 "y": 230
               }
-            ],
-            "labels": [
-              "Request\n"
             ]
           },
           {
@@ -405,15 +405,15 @@
               "threats": []
             },
             "id": "12234bf2-02c9-4875-bf5a-49be988f3a37",
+            "labels": [
+              "Authentication Token"
+            ],
             "source": {
               "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
             },
             "target": {
               "cell": "c3a49971-8711-4fba-802e-cf500d43d9f2"
-            },
-            "labels": [
-              "Authentication Token"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -444,6 +444,9 @@
               "threats": []
             },
             "id": "1f52394a-57ef-4f35-9543-d692e0517836",
+            "labels": [
+              "Authentication Token"
+            ],
             "source": {
               "cell": "119e4316-ceb6-4752-861b-9d86c283d03f"
             },
@@ -455,9 +458,6 @@
                 "x": 750,
                 "y": 300
               }
-            ],
-            "labels": [
-              "Authentication Token"
             ]
           },
           {
@@ -489,15 +489,15 @@
               "threats": []
             },
             "id": "4761c615-e2af-4363-b5c8-9d2b1b110ba5",
+            "labels": [
+              "Delete Authentication Token"
+            ],
             "source": {
               "cell": "c3a49971-8711-4fba-802e-cf500d43d9f2"
             },
             "target": {
               "cell": "119e4316-ceb6-4752-861b-9d86c283d03f"
             },
-            "labels": [
-              "Delete Authentication Token"
-            ],
             "vertices": [
               {
                 "x": 840,
@@ -518,40 +518,30 @@
             "zIndex": 10,
             "connector": "smooth",
             "labels": [
-              ""
+              "Boundary McTrust BoundaryFace\n"
             ],
             "data": {
               "type": "tm.Boundary",
-              "name": "",
+              "name": "Boundary McTrust BoundaryFace\n",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false
             },
-            "id": "8640f43d-6ace-4967-9a46-1018bcf20922",
+            "id": "c877aa2f-5958-432e-9403-3acfb9f014b1",
             "source": {
-              "x": 440,
-              "y": 0
+              "x": 430,
+              "y": -40
             },
             "target": {
-              "x": 470,
-              "y": 410
+              "x": 460,
+              "y": 450
             },
             "vertices": [
               {
                 "x": 400,
-                "y": 200
+                "y": 160
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "position": {
@@ -614,8 +604,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "c3a49971-8711-4fba-802e-cf500d43d9f2",
             "zIndex": 12,
+            "id": "c3a49971-8711-4fba-802e-cf500d43d9f2",
             "data": {
               "type": "tm.Process",
               "name": "Logout",
@@ -648,8 +638,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "8cba2fc4-fac3-458f-9d68-30db979c228e",
             "zIndex": 13,
+            "id": "8cba2fc4-fac3-458f-9d68-30db979c228e",
             "data": {
               "type": "tm.Process",
               "name": "Login",
@@ -682,8 +672,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "4d1d97f6-c851-43ba-9e9a-0bdf3addfc35",
             "zIndex": 14,
+            "id": "4d1d97f6-c851-43ba-9e9a-0bdf3addfc35",
             "data": {
               "type": "tm.Process",
               "name": "Authenticate",
@@ -716,8 +706,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "4458ebe9-1876-4397-bffa-edc1926bd79c",
             "zIndex": 15,
+            "id": "4458ebe9-1876-4397-bffa-edc1926bd79c",
             "data": {
               "type": "tm.Process",
               "name": "Generic \nStaff Action",
