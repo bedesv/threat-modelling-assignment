@@ -518,11 +518,11 @@
             "zIndex": 10,
             "connector": "smooth",
             "labels": [
-              "Boundary McTrust BoundaryFace\n"
+              "User/Web Server Boundary"
             ],
             "data": {
               "type": "tm.Boundary",
-              "name": "Boundary McTrust BoundaryFace\n",
+              "name": "User/Web Server Boundary",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false
