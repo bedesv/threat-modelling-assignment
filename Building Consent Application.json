@@ -1,0 +1,1273 @@
+{
+  "version": "2.0.3",
+  "summary": {
+    "title": "Building Consent Application ",
+    "owner": "",
+    "description": "An application for managing building consent forms and evidence.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "Application Threat Diagram",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.0.3",
+        "cells": [
+          {
+            "position": {
+              "x": 170,
+              "y": 40
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Applicant"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 1,
+            "id": "e3aab63a-d73f-4433-9fda-9c2ac56476a4",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Applicant",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "providesAuthentication": false,
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 550,
+              "y": 510
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Council \nStaff Member"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 2,
+            "id": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Council \nStaff Member",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "providesAuthentication": false,
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 490,
+              "y": 60
+            },
+            "size": {
+              "width": 80,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "Submit\napplication"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 3,
+            "id": "7a4334c6-84b6-4218-88a0-1caadf7a8ea9",
+            "data": {
+              "type": "tm.Process",
+              "name": "Submit\napplication",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 970,
+              "y": 360
+            },
+            "size": {
+              "width": 80,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "Review\napplication"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 4,
+            "id": "cf0aaefa-86b3-405d-8b59-4642ad9a6aad",
+            "data": {
+              "type": "tm.Process",
+              "name": "Review\napplication",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 36.25,
+              "y": 400
+            },
+            "size": {
+              "width": 100,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "Submit\nadditional\ndocuments"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 5,
+            "id": "5f8c8bc2-a58d-4115-ac38-43725b2b3e88",
+            "data": {
+              "type": "tm.Process",
+              "name": "Submit\nadditional\ndocuments",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 480,
+              "y": 200
+            },
+            "size": {
+              "width": 80,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "Consult\nprogress of\napplication"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 6,
+            "id": "70e4d0fa-5e83-493c-8459-977445fc6e2e",
+            "data": {
+              "type": "tm.Process",
+              "name": "Consult\nprogress of\napplication",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 592.5,
+              "y": 260
+            },
+            "size": {
+              "width": 80,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "Approve/\ndecline\napplication"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 7,
+            "id": "10321485-4662-47d2-b3ab-396010448f56",
+            "data": {
+              "type": "tm.Process",
+              "name": "Approve/\ndecline\napplication",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 800,
+              "y": 140
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Application\ndata store"
+              },
+              "topLine": {
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "id": "6ccac5e8-694d-41dd-828f-71fb7068ea7d",
+            "zIndex": 8,
+            "data": {
+              "type": "tm.Store",
+              "name": "Application\ndata store",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "isALog": false,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application details\n",
+              "description": "All application details plus the 8-digit application identifier",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "12441c13-ac35-455e-80ad-54725be0c3aa",
+            "source": {
+              "cell": "7a4334c6-84b6-4218-88a0-1caadf7a8ea9"
+            },
+            "target": {
+              "cell": "6ccac5e8-694d-41dd-828f-71fb7068ea7d"
+            },
+            "vertices": [
+              {
+                "x": 640,
+                "y": 114
+              },
+              {
+                "x": 700,
+                "y": 114
+              }
+            ],
+            "labels": [
+              "Application details\n"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Confirmation email",
+              "description": "Email with 8-digit application code \nconfirming application.\nAlso includes summary of the application.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "b4312452-ba3b-4d10-86d4-4cefbd208c8e",
+            "source": {
+              "cell": "7a4334c6-84b6-4218-88a0-1caadf7a8ea9"
+            },
+            "target": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "vertices": [
+              {
+                "x": 400,
+                "y": 140
+              }
+            ],
+            "labels": [
+              "Confirmation email"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application \nInformation",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "1f2c65f6-9dcc-411f-b7e2-599012575986",
+            "source": {
+              "cell": "6ccac5e8-694d-41dd-828f-71fb7068ea7d"
+            },
+            "target": {
+              "cell": "cf0aaefa-86b3-405d-8b59-4642ad9a6aad"
+            },
+            "vertices": [
+              {
+                "x": 880,
+                "y": 250
+              },
+              {
+                "x": 860,
+                "y": 280
+              }
+            ],
+            "labels": [
+              "Application \nInformation"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application details\n",
+              "description": "For each property owner:\n- pronoun\n- first name\n- last name\n- email\n- phone number\n\nDetails of the property (just its address)\nAnd supporting documents",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "e2c3edc0-93ac-4775-8c60-dfe94a794069",
+            "source": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "target": {
+              "cell": "7a4334c6-84b6-4218-88a0-1caadf7a8ea9"
+            },
+            "labels": [
+              "Application details\n"
+            ],
+            "vertices": [
+              {
+                "x": 350,
+                "y": 90
+              },
+              {
+                "x": 480,
+                "y": 90
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application\nInformation",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "05826def-6449-4812-90bb-2b75a73baf93",
+            "source": {
+              "cell": "cf0aaefa-86b3-405d-8b59-4642ad9a6aad"
+            },
+            "target": {
+              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
+            },
+            "labels": [
+              "Application\nInformation"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application information",
+              "description": "Summary of application and the extra information to be provided",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "34122417-c294-4ee7-8c33-6a2e05452518",
+            "source": {
+              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
+            },
+            "target": {
+              "cell": "83224f8f-93eb-4ae0-a5e3-6589c5b51576"
+            },
+            "vertices": [
+              {
+                "x": 550,
+                "y": 460
+              },
+              {
+                "x": 490,
+                "y": 430
+              }
+            ],
+            "labels": [
+              "Application information"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application information",
+              "description": "Summary of application and the extra information to be provided",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "d5b1574c-b901-41a6-bf7a-590899d208c0",
+            "source": {
+              "cell": "83224f8f-93eb-4ae0-a5e3-6589c5b51576"
+            },
+            "target": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "vertices": [
+              {
+                "x": 180,
+                "y": 250
+              },
+              {
+                "x": 180,
+                "y": 170
+              }
+            ],
+            "labels": [
+              "Application information"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Additional Documentation",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "76b4f75d-5228-41fe-874b-bff60583d283",
+            "source": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "target": {
+              "cell": "5f8c8bc2-a58d-4115-ac38-43725b2b3e88"
+            },
+            "vertices": [
+              {
+                "x": 91.25,
+                "y": 180
+              },
+              {
+                "x": 70,
+                "y": 300
+              },
+              {
+                "x": 130,
+                "y": 300
+              },
+              {
+                "x": 90,
+                "y": 280
+              },
+              {
+                "x": 70,
+                "y": 250
+              }
+            ],
+            "labels": [
+              "Additional Documentation"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Additional Documentation",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "f1e3839c-2047-446a-8b75-26679d2eda43",
+            "source": {
+              "cell": "5f8c8bc2-a58d-4115-ac38-43725b2b3e88"
+            },
+            "target": {
+              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
+            },
+            "labels": [
+              "Additional Documentation"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Additional documentation",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "4fbaa5c8-d7e7-4acb-9616-e005b0ae5983",
+            "source": {
+              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
+            },
+            "target": {
+              "cell": "fa080330-b2ec-43e1-966e-3c6daca5fe4c"
+            },
+            "vertices": [
+              {
+                "x": 720,
+                "y": 450
+              },
+              {
+                "x": 740,
+                "y": 410
+              }
+            ],
+            "labels": [
+              "Additional documentation"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "\nAdditional documentation",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "1e92774c-8369-4324-80d4-b9ba53c9aed5",
+            "source": {
+              "cell": "fa080330-b2ec-43e1-966e-3c6daca5fe4c"
+            },
+            "target": {
+              "cell": "6ccac5e8-694d-41dd-828f-71fb7068ea7d"
+            },
+            "vertices": [
+              {
+                "x": 810,
+                "y": 290
+              },
+              {
+                "x": 840,
+                "y": 250
+              }
+            ],
+            "labels": [
+              "\nAdditional documentation"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application ID",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "7752b106-84b0-49c4-a5ae-16f42ddad41e",
+            "source": {
+              "cell": "70e4d0fa-5e83-493c-8459-977445fc6e2e"
+            },
+            "target": {
+              "cell": "6ccac5e8-694d-41dd-828f-71fb7068ea7d"
+            },
+            "labels": [
+              "Application ID"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application status information",
+              "description": "Status\nStaff member responsible\nSupporting documents (optional)",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "7fa64a84-f428-4281-b2ab-6ebbcf9e0dc1",
+            "source": {
+              "cell": "6ccac5e8-694d-41dd-828f-71fb7068ea7d"
+            },
+            "target": {
+              "cell": "70e4d0fa-5e83-493c-8459-977445fc6e2e"
+            },
+            "vertices": [
+              {
+                "x": 640,
+                "y": 170
+              }
+            ],
+            "labels": [
+              "Application status information"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application ID",
+              "description": "Also maybe a supporting documentation flag?",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "77cc6cf4-f161-4ace-ac37-7ca1c126855f",
+            "source": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "target": {
+              "cell": "70e4d0fa-5e83-493c-8459-977445fc6e2e"
+            },
+            "vertices": [
+              {
+                "x": 340,
+                "y": 190
+              },
+              {
+                "x": 390,
+                "y": 210
+              },
+              {
+                "x": 420,
+                "y": 210
+              }
+            ],
+            "labels": [
+              "Application ID"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Decision number",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "540f6c92-ad25-40bd-9c21-1e49d81c6bb7",
+            "source": {
+              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
+            },
+            "target": {
+              "cell": "10321485-4662-47d2-b3ab-396010448f56"
+            },
+            "vertices": [
+              {
+                "x": 626.25,
+                "y": 400
+              }
+            ],
+            "labels": [
+              "Decision number"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Decision update",
+              "description": "Status and decision number",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "60c2abb6-8201-42dc-b0db-4afa1e154455",
+            "source": {
+              "cell": "10321485-4662-47d2-b3ab-396010448f56"
+            },
+            "target": {
+              "cell": "6ccac5e8-694d-41dd-828f-71fb7068ea7d"
+            },
+            "vertices": [
+              {
+                "x": 690,
+                "y": 270
+              },
+              {
+                "x": 760,
+                "y": 230
+              }
+            ],
+            "labels": [
+              "Decision update"
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Decision email",
+              "description": "Email with decision number and a letter of confirmation/denial.\nSent to all relevant applicants",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "aee8e2d5-3682-4a49-8f09-8652045a2cc9",
+            "source": {
+              "cell": "10321485-4662-47d2-b3ab-396010448f56"
+            },
+            "target": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "vertices": [
+              {
+                "x": 450,
+                "y": 334
+              },
+              {
+                "x": 310,
+                "y": 334
+              },
+              {
+                "x": 270,
+                "y": 290
+              }
+            ],
+            "labels": [
+              "Decision email"
+            ]
+          },
+          {
+            "shape": "trust-broundary-curve",
+            "attrs": {
+              "line": {
+                "targetMarker": "",
+                "sourceMarker": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "labels": [
+              {
+                "attrs": {
+                  "text": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "data": {
+              "type": "tm.Boundary",
+              "name": "",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "716f863d-3e9c-4a24-b8eb-a92ef603c3a4",
+            "source": {
+              "x": 310,
+              "y": 0
+            },
+            "target": {
+              "x": 1100,
+              "y": 540
+            },
+            "vertices": [
+              {
+                "x": 560,
+                "y": 440
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application status information",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "3f7322b9-1690-477d-a748-4ac7782148b1",
+            "source": {
+              "cell": "70e4d0fa-5e83-493c-8459-977445fc6e2e"
+            },
+            "target": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "vertices": [
+              {
+                "x": 350,
+                "y": 290
+              }
+            ],
+            "labels": [
+              "Application status information"
+            ]
+          },
+          {
+            "position": {
+              "x": 170,
+              "y": 330
+            },
+            "size": {
+              "width": 100,
+              "height": 100
+            },
+            "attrs": {
+              "text": {
+                "text": "Request More\nDocuments"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "id": "83224f8f-93eb-4ae0-a5e3-6589c5b51576",
+            "zIndex": 11,
+            "data": {
+              "type": "tm.Process",
+              "name": "Request More\nDocuments",
+              "description": "Send request for more information via Email or call",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 800,
+              "y": 340
+            },
+            "size": {
+              "width": 80,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "Update \nApplication"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "id": "fa080330-b2ec-43e1-966e-3c6daca5fe4c",
+            "zIndex": 12,
+            "data": {
+              "type": "tm.Process",
+              "name": "Update \nApplication",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          }
+        ]
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
