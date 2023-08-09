@@ -1,5 +1,5 @@
 {
-  "version": "2.0.3",
+  "version": "2.0.4-RC2",
   "summary": {
     "title": "Threat model",
     "owner": "",
@@ -1871,51 +1871,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "SQL statement",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "52e6ae9b-d6c3-4056-be64-4565345f446f",
-            "source": {
-              "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
-            },
-            "target": {
-              "cell": "e19e6ed8-29e4-4562-a2ab-73878d0dc28a"
-            },
-            "vertices": [
-              {
-                "x": 560,
-                "y": 320
-              }
-            ],
-            "labels": [
-              "SQL statement"
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "SQL Response",
               "description": "",
               "outOfScope": false,
@@ -1927,6 +1882,9 @@
               "threats": []
             },
             "id": "ccdcd552-a4aa-446e-8192-e3de9ac936c5",
+            "labels": [
+              "SQL Response"
+            ],
             "source": {
               "cell": "e19e6ed8-29e4-4562-a2ab-73878d0dc28a"
             },
@@ -1938,9 +1896,6 @@
                 "x": 500,
                 "y": 373
               }
-            ],
-            "labels": [
-              "SQL Response"
             ]
           },
           {
@@ -1972,6 +1927,9 @@
               "threats": []
             },
             "id": "ea4bd390-5311-4ba4-a699-49fec3de4b95",
+            "labels": [
+              "SQL Statement"
+            ],
             "source": {
               "cell": "e19e6ed8-29e4-4562-a2ab-73878d0dc28a"
             },
@@ -1983,9 +1941,6 @@
                 "x": 790,
                 "y": 330
               }
-            ],
-            "labels": [
-              "SQL Statement"
             ]
           },
           {
@@ -2017,6 +1972,9 @@
               "threats": []
             },
             "id": "bdea16bc-14a1-4015-8a88-2e0b2d5ab7e0",
+            "labels": [
+              "SQL Response"
+            ],
             "source": {
               "cell": "f7312b22-9498-4ca3-a19f-bbbd012fe825"
             },
@@ -2028,9 +1986,6 @@
                 "x": 780,
                 "y": 400
               }
-            ],
-            "labels": [
-              "SQL Response"
             ]
           },
           {
@@ -2062,15 +2017,15 @@
               "threats": []
             },
             "id": "ecceb616-7227-48bb-b50b-52cd02f439de",
+            "labels": [
+              "Account Details"
+            ],
             "source": {
               "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
             },
             "target": {
               "cell": "93dc1206-6bc3-477f-8785-4daa646170c0"
-            },
-            "labels": [
-              "Account Details"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -2101,15 +2056,15 @@
               "threats": []
             },
             "id": "2e2c66d2-f84a-4447-9f54-d6ad17e53b69",
+            "labels": [
+              "Account Name"
+            ],
             "source": {
               "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
             },
             "target": {
               "cell": "c2f3b295-a5a5-4370-aa24-54250c687a49"
-            },
-            "labels": [
-              "Account Name"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -2140,14 +2095,20 @@
               "threats": []
             },
             "id": "1cffb4a2-05f6-4eb2-95d8-e68d072f3a8e",
+            "labels": [
+              "Account Details"
+            ],
             "source": {
               "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
             },
             "target": {
               "cell": "a3c453b1-1727-4625-9c11-e9d8e99c8cb0"
             },
-            "labels": [
-              "Account Details"
+            "vertices": [
+              {
+                "x": 540,
+                "y": 250
+              }
             ]
           },
           {
@@ -2179,15 +2140,15 @@
               "threats": []
             },
             "id": "34ec6be5-460c-4833-b598-a6898ba5fc0b",
+            "labels": [
+              "Account Update"
+            ],
             "source": {
               "cell": "a3c453b1-1727-4625-9c11-e9d8e99c8cb0"
             },
             "target": {
               "cell": "c412e2df-c6ae-4179-9013-11e58b504773"
-            },
-            "labels": [
-              "Account Update"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -2218,15 +2179,15 @@
               "threats": []
             },
             "id": "16fa3d25-0d4b-481f-8c53-6d532dcdd1a4",
+            "labels": [
+              "Account Creation"
+            ],
             "source": {
               "cell": "93dc1206-6bc3-477f-8785-4daa646170c0"
             },
             "target": {
               "cell": "c412e2df-c6ae-4179-9013-11e58b504773"
-            },
-            "labels": [
-              "Account Creation"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -2257,15 +2218,15 @@
               "threats": []
             },
             "id": "b72f2d8c-2866-4b63-bc11-dbb56dd94cca",
+            "labels": [
+              "Account Deletion"
+            ],
             "source": {
               "cell": "c2f3b295-a5a5-4370-aa24-54250c687a49"
             },
             "target": {
               "cell": "c412e2df-c6ae-4179-9013-11e58b504773"
-            },
-            "labels": [
-              "Account Deletion"
-            ]
+            }
           },
           {
             "shape": "trust-broundary-curve",
@@ -2280,17 +2241,11 @@
             "zIndex": 10,
             "connector": "smooth",
             "labels": [
-              {
-                "attrs": {
-                  "text": {
-                    "text": ""
-                  }
-                }
-              }
+              "User/Web Server Boundary"
             ],
             "data": {
               "type": "tm.Boundary",
-              "name": "",
+              "name": "User/Web Server Boundary",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false
@@ -2298,7 +2253,7 @@
             "id": "089e7fa5-bc17-4660-ae0c-ae28864bb9bd",
             "source": {
               "x": 560,
-              "y": 40
+              "y": 80
             },
             "target": {
               "x": 570,
@@ -2307,7 +2262,52 @@
             "vertices": [
               {
                 "x": 530,
-                "y": 270
+                "y": 280
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "SQL Statement",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "52e6ae9b-d6c3-4056-be64-4565345f446f",
+            "labels": [
+              "SQL Statement"
+            ],
+            "source": {
+              "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
+            },
+            "target": {
+              "cell": "e19e6ed8-29e4-4562-a2ab-73878d0dc28a"
+            },
+            "vertices": [
+              {
+                "x": 550,
+                "y": 350
               }
             ]
           },
