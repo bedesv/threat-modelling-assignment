@@ -1,5 +1,5 @@
 {
-  "version": "2.0.3",
+  "version": "2.0.4-RC2",
   "summary": {
     "title": "Threat model",
     "owner": "",
@@ -55,8 +55,7 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
+                "stroke": "red",
                 "targetMarker": {
                   "name": "classic"
                 },
@@ -76,8 +75,22 @@
               "protocol": "",
               "isEncrypted": false,
               "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "dc9a9928-68b6-48ec-987e-79914b391a87",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Threat",
+                  "mitigation": "asdasdasdad",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                }
+              ]
             },
             "id": "68fc13d9-7574-45fc-9d65-3faee0306802",
             "labels": [
@@ -413,7 +426,13 @@
             },
             "target": {
               "cell": "c3a49971-8711-4fba-802e-cf500d43d9f2"
-            }
+            },
+            "vertices": [
+              {
+                "x": 490,
+                "y": 310
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -2597,6 +2616,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 1
   }
 }
