@@ -1200,8 +1200,8 @@
                 "text": "Submit\napplication"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               }
             },
@@ -1216,8 +1216,74 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "privilegeLevel": "",
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "5688f89a-7760-4004-965b-71c7d2dbb32f",
+                  "title": "Stealing Details with Fake Application Page",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "A threat actor creates a fake application page resembling the real application page. This is then used to trick applicants into sharing their details with the threat actor.",
+                  "mitigation": "Purchase similar domain names so that threat actors can't use them. Use a simple domain name so it's easier for the users to identify.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 88,
+                  "score": ""
+                },
+                {
+                  "id": "c91ec5ed-bc63-4848-abe6-ebc213d5105e",
+                  "title": "Repeated Applications",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Repeated applications by an actor use significant resources such as CPU and memory",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 89,
+                  "score": ""
+                },
+                {
+                  "id": "8db5bb99-d159-43ca-9f59-972a9fab8ac5",
+                  "title": "Distributed Denial of Service Attack",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Similarly to the repeated login attempts, a distributed denial of service attack can cause significant CPU and memory usage. It can be hard to mitigate because requests come from lots of different sources, so can't all be blocked.",
+                  "mitigation": "Use an access control list and scale up server capacity to allow for more concurrent requests. It is assumed that this is managed by the cloud service provider.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 90,
+                  "score": ""
+                },
+                {
+                  "id": "ac064704-32bf-4e3c-8ea2-0530bbf497f0",
+                  "title": "SQL/Code Injection",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "When user inputs are not sanitised and handled correctly by the process, it can lead to malicious actions being performed within the process, leading the threat actor performing actions they don't have the privileges to do.",
+                  "mitigation": "Sanitise user input so that it can't be executed as code.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 91,
+                  "score": ""
+                },
+                {
+                  "id": "517bd562-075e-466c-ad62-375443a4330c",
+                  "title": "Fake Applications",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "A threat actor could create fake applications to waste the council's time, then deny it.",
+                  "mitigation": "Log all actions taken by actors with the actor's ip address, to ensure that the source of actions can be traced back to the actor that initiated them.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 92,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -2088,65 +2154,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Confirmation email",
-              "description": "Email with 8-digit application code \nconfirming application.\nAlso includes summary of the application.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [
-                {
-                  "id": "9c8e7560-6c42-46ce-a3b9-4d4cd88bc576",
-                  "title": "Adversary in the Middle Attack",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "A threat actor can intercept emails meant for the user, gaining access to their application ID, and therefore their supporting documents.",
-                  "mitigation": "Use an email provider with encryption and that can only be accessed through HTTPS",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 71,
-                  "score": ""
-                }
-              ]
-            },
-            "id": "b4312452-ba3b-4d10-86d4-4cefbd208c8e",
-            "labels": [
-              "Confirmation email"
-            ],
-            "source": {
-              "cell": "7a4334c6-84b6-4218-88a0-1caadf7a8ea9"
-            },
-            "target": {
-              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
-            },
-            "vertices": [
-              {
-                "x": 330,
-                "y": 400
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Application information",
               "description": "Summary of application and the extra information to be provided",
               "outOfScope": false,
@@ -2479,6 +2486,65 @@
             "target": {
               "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
             }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Confirmation email",
+              "description": "Email with 8-digit application code \nconfirming application.\nAlso includes summary of the application.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "9c8e7560-6c42-46ce-a3b9-4d4cd88bc576",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept emails meant for the user, gaining access to their application ID, and therefore their supporting documents.",
+                  "mitigation": "Use an email provider with encryption and that can only be accessed through HTTPS",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 71,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "b4312452-ba3b-4d10-86d4-4cefbd208c8e",
+            "labels": [
+              "Confirmation email"
+            ],
+            "source": {
+              "cell": "7a4334c6-84b6-4218-88a0-1caadf7a8ea9"
+            },
+            "target": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "vertices": [
+              {
+                "x": 330,
+                "y": 400
+              }
+            ]
           },
           {
             "position": {
@@ -3251,6 +3317,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 87
+    "threatTop": 96
   }
 }
