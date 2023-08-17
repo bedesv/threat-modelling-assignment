@@ -2885,7 +2885,21 @@
               "isEncrypted": false,
               "isSigned": false,
               "hasOpenThreats": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "cd0acc97-da27-415d-b667-90e381594aee",
+                  "title": "Database Filling Up",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "If too many users are registered, issues could occur due to the database filling up",
+                  "mitigation": "This is mitigated by only allowing users to be created by administrators. Checks are performed before adding a new user account to ensure the database has enough space.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 56,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -2933,6 +2947,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 55
+    "threatTop": 56
   }
 }
