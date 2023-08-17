@@ -164,59 +164,6 @@
               "hasOpenThreats": false,
               "threats": []
             },
-            "id": "2149346a-a7bb-4b28-bf56-9ca662abad5b",
-            "labels": [
-              "Authentication Token"
-            ],
-            "source": {
-              "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
-            },
-            "target": {
-              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
-            },
-            "vertices": [
-              {
-                "x": 460,
-                "y": 30
-              },
-              {
-                "x": 350,
-                "y": 30
-              },
-              {
-                "x": 320,
-                "y": 110
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Authentication Token",
-              "description": "Auth token with a 1 week timeout",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
             "id": "4670f34f-9210-44f7-ac85-bcbd39041ade",
             "labels": [
               "Authentication Token"
@@ -562,6 +509,73 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
+              "name": "Authentication Response",
+              "description": "Either an authentication token with a 1 week timeout (if login successful), or a unauthorised error (if not)",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "65327f8e-4854-4a27-ac5a-ca1ab6ee6527",
+                  "title": "Disclosure of Used Usernames",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "When the actor supplies an incorrect or invalid username or password, they can determine whether the username is used in the system because the feedback specifies which field is invalid.",
+                  "mitigation": "Only provide generic feedback stating that the username or password is incorrect.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "2149346a-a7bb-4b28-bf56-9ca662abad5b",
+            "labels": [
+              "Authentication Response"
+            ],
+            "source": {
+              "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
+            },
+            "target": {
+              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
+            },
+            "vertices": [
+              {
+                "x": 460,
+                "y": 30
+              },
+              {
+                "x": 350,
+                "y": 30
+              },
+              {
+                "x": 320,
+                "y": 110
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
               "name": "User Details",
               "description": "Username and password",
               "outOfScope": false,
@@ -570,7 +584,34 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "hasOpenThreats": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "858aa1a2-f2a7-41d6-b70f-86478b9be1e4",
+                  "title": "Network Tampering (Adversary in the Middle Attack)",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Threat actor intercepts network traffic with the staff member's user details ",
+                  "mitigation": "Mitigated - Encrypt all network communication and use transport layer security",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                },
+                {
+                  "id": "80a70fb4-63cb-4bf3-8dda-6afc00018a3e",
+                  "title": "Denial of Service From Repeated Login Attempts",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly attempts to login to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                }
+              ]
             },
             "id": "68fc13d9-7574-45fc-9d65-3faee0306802",
             "labels": [
@@ -603,11 +644,13 @@
                 "text": "Authentication\nStore"
               },
               "topLine": {
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               }
             },
@@ -625,8 +668,35 @@
               "storesCredentials": false,
               "isEncrypted": false,
               "isSigned": false,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "798cd3e7-d801-4ac9-aa4f-42008051cb85",
+                  "title": "Data Tampering",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "An actor gains access to the authentication store and alters or removes entries",
+                  "mitigation": "Store database credentials in a secure location and not in plain text",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                },
+                {
+                  "id": "68331f82-c169-48c3-8a8b-5651ad7c7d7f",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 0,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -2643,6 +2713,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 6
+    "threatTop": 13
   }
 }
