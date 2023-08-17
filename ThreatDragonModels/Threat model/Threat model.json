@@ -2315,45 +2315,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Account Creation",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "16fa3d25-0d4b-481f-8c53-6d532dcdd1a4",
-            "labels": [
-              "Account Creation"
-            ],
-            "source": {
-              "cell": "93dc1206-6bc3-477f-8785-4daa646170c0"
-            },
-            "target": {
-              "cell": "c412e2df-c6ae-4179-9013-11e58b504773"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Account Deletion",
               "description": "",
               "outOfScope": false,
@@ -2455,6 +2416,51 @@
               {
                 "x": 550,
                 "y": 350
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Account Creation",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "16fa3d25-0d4b-481f-8c53-6d532dcdd1a4",
+            "labels": [
+              "Account Creation"
+            ],
+            "source": {
+              "cell": "93dc1206-6bc3-477f-8785-4daa646170c0"
+            },
+            "target": {
+              "cell": "c412e2df-c6ae-4179-9013-11e58b504773"
+            },
+            "vertices": [
+              {
+                "x": 780,
+                "y": 150
               }
             ]
           },
@@ -2665,7 +2671,21 @@
               "isEncrypted": false,
               "isSigned": false,
               "hasOpenThreats": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "27a4e366-a9b9-442c-9834-df07b6980b2d",
+                  "title": "Database Filling Up",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "If too many users are registered, issues could occur due to the database filling up",
+                  "mitigation": "This is mitigated by only allowing users to be created by administrators. Checks are performed before adding a new user account to ensure the database has enough space",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -2713,6 +2733,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 13
+    "threatTop": 14
   }
 }
