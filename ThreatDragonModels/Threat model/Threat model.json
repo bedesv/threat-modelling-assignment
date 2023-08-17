@@ -48,66 +48,48 @@
               "reasonOutOfScope": "",
               "providesAuthentication": false,
               "hasOpenThreats": false,
-              "threats": []
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "User Details",
-              "description": "Username and password",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": true,
               "threats": [
                 {
-                  "id": "dc9a9928-68b6-48ec-987e-79914b391a87",
-                  "title": "New STRIDE threat",
-                  "status": "Open",
+                  "id": "35aa4b02-490e-4371-b891-3b272e6ddbfa",
+                  "title": "Staff Credentials Stolen",
+                  "status": "Mitigated",
                   "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "Threat",
-                  "mitigation": "asdasdasdad",
+                  "type": "Spoofing",
+                  "description": "Staff credentials can be stolen via methods including brute force attacks, man in the middle attacks, etc",
+                  "mitigation": "Require two factor authentication and passwords that contain at least 10 characters, including at least one of each of upper case letter, lower case letter, number, and special character",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 1,
+                  "number": 2,
+                  "score": ""
+                },
+                {
+                  "id": "6a5c0dbe-e587-436c-af06-15cb15824a18",
+                  "title": "Staff Session Hijacked",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Staff session tokens get stolen by a threat actor and used maliciously to use the application as the staff member.",
+                  "mitigation": "Use secure cookies with a session token sufficient length and entropy (128 bits long and at 64 bits of entropy). Also provide staff with training on avoiding phishing attacks and use email filters.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                },
+                {
+                  "id": "9b950ff8-a1fb-4f6f-9d73-bdc92531152c",
+                  "title": "Spoofed Account Performing Malicious Actions",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Accounts that have been spoofed can perform malicious acts without being able to prove whether the account was stolen by a threat actor.",
+                  "mitigation": "Log all actions taken by actors, including login attempts with the actor's ip address, to ensure that the source of actions can be traced back to the actor that initiated them.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
                   "score": ""
                 }
               ]
-            },
-            "id": "68fc13d9-7574-45fc-9d65-3faee0306802",
-            "labels": [
-              "User Details"
-            ],
-            "source": {
-              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
-            },
-            "target": {
-              "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
-            },
-            "vertices": [
-              {
-                "x": 410,
-                "y": 83
-              }
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -559,6 +541,51 @@
               {
                 "x": 400,
                 "y": 160
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "User Details",
+              "description": "Username and password",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "68fc13d9-7574-45fc-9d65-3faee0306802",
+            "labels": [
+              "User Details"
+            ],
+            "source": {
+              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
+            },
+            "target": {
+              "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
+            },
+            "vertices": [
+              {
+                "x": 410,
+                "y": 83
               }
             ]
           },
@@ -2616,6 +2643,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 1
+    "threatTop": 6
   }
 }
