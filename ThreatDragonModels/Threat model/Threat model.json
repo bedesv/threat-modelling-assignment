@@ -19,8 +19,8 @@
         "cells": [
           {
             "position": {
-              "x": 399.9999999999984,
-              "y": 23.593750000003922
+              "x": 400,
+              "y": 20
             },
             "size": {
               "width": 930,
@@ -561,89 +561,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "User Details",
-              "description": "Username and password",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": true,
-              "threats": [
-                {
-                  "id": "858aa1a2-f2a7-41d6-b70f-86478b9be1e4",
-                  "title": "Network Tampering (Adversary in the Middle Attack)",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "Threat actor intercepts network traffic with the staff member's user details ",
-                  "mitigation": "Mitigated - Encrypt all network communication and use transport layer security",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 7,
-                  "score": ""
-                },
-                {
-                  "id": "80a70fb4-63cb-4bf3-8dda-6afc00018a3e",
-                  "title": "Denial of Service From Repeated Login Attempts",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Denial of service",
-                  "description": "A malicious actor repeatedly attempts to login to the system, slowing down access for other actors",
-                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 11,
-                  "score": ""
-                }
-              ]
-            },
-            "id": "68fc13d9-7574-45fc-9d65-3faee0306802",
-            "labels": [
-              "User Details"
-            ],
-            "source": {
-              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
-            },
-            "target": {
-              "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
-            },
-            "vertices": [
-              {
-                "x": 320,
-                "y": 80
-              },
-              {
-                "x": 370,
-                "y": 50
-              },
-              {
-                "x": 390,
-                "y": 50
-              },
-              {
-                "x": 440,
-                "y": 40
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Request\n",
               "description": "",
               "outOfScope": false,
@@ -695,6 +612,89 @@
               {
                 "x": 420,
                 "y": 184
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "User Details",
+              "description": "Username and password",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "858aa1a2-f2a7-41d6-b70f-86478b9be1e4",
+                  "title": "Network Tampering (Adversary in the Middle Attack)",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Threat actor intercepts network traffic with the staff member's user details ",
+                  "mitigation": "Mitigated - Encrypt all network communication and use transport layer security",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                },
+                {
+                  "id": "80a70fb4-63cb-4bf3-8dda-6afc00018a3e",
+                  "title": "Denial of Service From Repeated Login Attempts",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly attempts to login to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff logins behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "68fc13d9-7574-45fc-9d65-3faee0306802",
+            "labels": [
+              "User Details"
+            ],
+            "source": {
+              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
+            },
+            "target": {
+              "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
+            },
+            "vertices": [
+              {
+                "x": 320,
+                "y": 80
+              },
+              {
+                "x": 370,
+                "y": 50
+              },
+              {
+                "x": 390,
+                "y": 50
+              },
+              {
+                "x": 440,
+                "y": 40
               }
             ]
           },
@@ -915,8 +915,8 @@
                 "text": "Authenticate"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               }
             },
@@ -931,8 +931,48 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "privilegeLevel": "",
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "9585975c-c278-4dc4-9309-e8d94e3c6ad7",
+                  "title": "Session Hijacking",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Staff session tokens get stolen by a threat actor and used maliciously to use the application as the staff member.",
+                  "mitigation": "Use secure cookies with a session token sufficient length and entropy (128 bits long and at 64 bits of entropy). Also provide staff with training on avoiding phishing attacks and use email filters.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 40,
+                  "score": ""
+                },
+                {
+                  "id": "2b31d9c8-465f-4ea3-95c3-e1e84fa890e9",
+                  "title": "Repeated Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Repeated request attempts by an actor use significant resources such as CPU and memory",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff logins behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 48,
+                  "score": ""
+                },
+                {
+                  "id": "c5299401-f4c8-4ab4-94e4-d684556ecdf6",
+                  "title": "Performing Actions Above Privilege Level",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "By failing to restrict administration actions, staff members could perform actions above their privilege level.",
+                  "mitigation": "Implement role based authorisation for all system actions.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 51,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -2847,6 +2887,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 38
+    "threatTop": 51
   }
 }
