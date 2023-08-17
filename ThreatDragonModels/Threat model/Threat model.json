@@ -696,7 +696,17 @@
                 "x": 440,
                 "y": 40
               }
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
@@ -866,7 +876,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Repeated login attempts by an actor use significant resources such as CPU and memory",
-                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 30,
@@ -879,7 +889,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Similarly to the repeated login attempts, a distributed denial of service attack can cause significant CPU and memory usage. It can be hard to mitigate because requests come from lots of different sources, so can't all be blocked.",
-                  "mitigation": "Use an access control list and scale up server capacity to allow for more concurrent requests. It is assumed that this is managed by the cloud service provider.",
+                  "mitigation": "Use an access control list and scale up server capacity to allow for more concurrent requests. It is assumed that this is managed by the cloud service provider.\n\nAdditionally, you could put staff logins behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 31,
@@ -953,7 +963,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Repeated request attempts by an actor use significant resources such as CPU and memory",
-                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff logins behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 48,
