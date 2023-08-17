@@ -1,5 +1,5 @@
 {
-  "version": "2.0.4-RC2",
+  "version": "2.0.3",
   "summary": {
     "title": "Threat model",
     "owner": "",
@@ -1113,8 +1113,8 @@
                 "text": "Council \nStaff Member"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               }
             },
@@ -1129,8 +1129,61 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "providesAuthentication": false,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "ed3b4408-0f7a-4a9b-8ad4-a289c964b573",
+                  "title": "Impersonation of a Council Staff Member",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "A threat actor could impersonate a council staff member and send emails to applicants requesting additional information (if they have their contact information through another means). ",
+                  "mitigation": "Purchase similar email domains to ensure threat actors can't use them. Use a simple email domain to make it easier for applicants to detect fake emails.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 78,
+                  "score": ""
+                },
+                {
+                  "id": "f44802e9-784f-4031-9763-c13d90fc7ab2",
+                  "title": "Session Hijacking",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Staff session tokens get stolen by a threat actor and used maliciously to use the application as the staff member.",
+                  "mitigation": "Use secure cookies with a session token sufficient length and entropy (128 bits long and at 64 bits of entropy). Also provide staff with training on avoiding phishing attacks and use email filters.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 79,
+                  "score": ""
+                },
+                {
+                  "id": "44cb40bc-4444-4b5e-bd11-115231d93f61",
+                  "title": "Staff Credentials Stolen",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Staff credentials can be stolen via methods including brute force attacks, man in the middle attacks, them writing their details on a sticky note on their monitor, etc",
+                  "mitigation": "Require two factor authentication and passwords that contain at least 10 characters, including at least one of each of upper case letter, lower case letter, number, and special character. Provide training to staff on best practices for password security.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 80,
+                  "score": ""
+                },
+                {
+                  "id": "e86c2f12-1e2d-4bcc-8ab9-073b4f2d85f0",
+                  "title": "Spoofed Account/Email Performing Malicious Actions",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Accounts that have been spoofed can perform malicious acts without being able to prove whether the account was stolen by a threat actor.",
+                  "mitigation": "Log all actions taken by actors, including login attempts with the actor's ip address, to ensure that the source of actions can be traced back to the actor that initiated them.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 81,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -1283,11 +1336,13 @@
                 "text": "Application\ndata store"
               },
               "topLine": {
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               }
             },
@@ -1305,54 +1360,23 @@
               "storesCredentials": false,
               "isEncrypted": false,
               "isSigned": false,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "e0b4f7c3-1e84-43a6-930e-6d6ae0d077ab",
+                  "title": "Database Filling Up",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "If the system receives significantly more applications than expected, the database could run out of space to store information about new applications.",
+                  "mitigation": "Partially mitigate by enabling storage notifications to system administrators so that they can increase the size of the database. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 58,
+                  "score": ""
+                }
+              ]
             }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Confirmation email",
-              "description": "Email with 8-digit application code \nconfirming application.\nAlso includes summary of the application.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "b4312452-ba3b-4d10-86d4-4cefbd208c8e",
-            "labels": [
-              "Confirmation email"
-            ],
-            "source": {
-              "cell": "7a4334c6-84b6-4218-88a0-1caadf7a8ea9"
-            },
-            "target": {
-              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
-            },
-            "vertices": [
-              {
-                "x": 330,
-                "y": 400
-              }
-            ]
           },
           {
             "shape": "flow",
@@ -1400,143 +1424,6 @@
               {
                 "x": 860,
                 "y": 280
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Application details\n",
-              "description": "For each property owner:\n- pronoun\n- first name\n- last name\n- email\n- phone number\n\nDetails of the property (just its address)\nAnd supporting documents",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "e2c3edc0-93ac-4775-8c60-dfe94a794069",
-            "labels": [
-              "Application details\n"
-            ],
-            "source": {
-              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
-            },
-            "target": {
-              "cell": "7a4334c6-84b6-4218-88a0-1caadf7a8ea9"
-            },
-            "vertices": [
-              {
-                "x": 350,
-                "y": 90
-              },
-              {
-                "x": 480,
-                "y": 90
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Application\nInformation",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "05826def-6449-4812-90bb-2b75a73baf93",
-            "labels": [
-              "Application\nInformation"
-            ],
-            "source": {
-              "cell": "cf0aaefa-86b3-405d-8b59-4642ad9a6aad"
-            },
-            "target": {
-              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Additional documentation",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "4fbaa5c8-d7e7-4acb-9616-e005b0ae5983",
-            "labels": [
-              "Additional documentation"
-            ],
-            "source": {
-              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
-            },
-            "target": {
-              "cell": "fa080330-b2ec-43e1-966e-3c6daca5fe4c"
-            },
-            "vertices": [
-              {
-                "x": 760,
-                "y": 430
-              },
-              {
-                "x": 740,
-                "y": 410
               }
             ]
           },
@@ -1652,51 +1539,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Application ID",
-              "description": "Also maybe a supporting documentation flag?",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "77cc6cf4-f161-4ace-ac37-7ca1c126855f",
-            "labels": [
-              "Application ID"
-            ],
-            "source": {
-              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
-            },
-            "target": {
-              "cell": "70e4d0fa-5e83-493c-8459-977445fc6e2e"
-            },
-            "vertices": [
-              {
-                "x": 390,
-                "y": 210
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Decision update",
               "description": "Status and decision number",
               "outOfScope": false,
@@ -1725,190 +1567,6 @@
               {
                 "x": 760,
                 "y": 230
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Decision email",
-              "description": "Email with decision number and a letter of confirmation/denial.\nSent to all relevant applicants",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "aee8e2d5-3682-4a49-8f09-8652045a2cc9",
-            "labels": [
-              "Decision email"
-            ],
-            "source": {
-              "cell": "10321485-4662-47d2-b3ab-396010448f56"
-            },
-            "target": {
-              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
-            },
-            "vertices": [
-              {
-                "x": 270,
-                "y": 460
-              },
-              {
-                "x": 200,
-                "y": 330
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Decision",
-              "description": "Decision number and decision status",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "540f6c92-ad25-40bd-9c21-1e49d81c6bb7",
-            "labels": [
-              "Decision"
-            ],
-            "source": {
-              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
-            },
-            "target": {
-              "cell": "10321485-4662-47d2-b3ab-396010448f56"
-            },
-            "vertices": [
-              {
-                "x": 626.25,
-                "y": 400
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Application information",
-              "description": "Summary of application and the extra information to be provided",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "34122417-c294-4ee7-8c33-6a2e05452518",
-            "labels": [
-              "Application information"
-            ],
-            "source": {
-              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
-            },
-            "target": {
-              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
-            },
-            "vertices": [
-              {
-                "x": 230,
-                "y": 500
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Additional Documentation",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "412d82c3-02e1-4e22-b20e-39877e14d330",
-            "labels": [
-              "Additional Documentation"
-            ],
-            "source": {
-              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
-            },
-            "target": {
-              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
-            },
-            "vertices": [
-              {
-                "x": 126.25,
-                "y": 540
               }
             ]
           },
@@ -1947,51 +1605,6 @@
               {
                 "x": 392,
                 "y": 330
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Application status information",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "3f7322b9-1690-477d-a748-4ac7782148b1",
-            "labels": [
-              "Application status information"
-            ],
-            "source": {
-              "cell": "70e4d0fa-5e83-493c-8459-977445fc6e2e"
-            },
-            "target": {
-              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
-            },
-            "vertices": [
-              {
-                "x": 360,
-                "y": 270
               }
             ]
           },
@@ -2115,6 +1728,9 @@
               "threats": []
             },
             "id": "7d43dedf-9922-4b1e-891e-0c94dc779c98",
+            "labels": [
+              "Supporting documents"
+            ],
             "source": {
               "cell": "6ccac5e8-694d-41dd-828f-71fb7068ea7d"
             },
@@ -2126,9 +1742,81 @@
                 "x": 670,
                 "y": 210
               }
-            ],
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application details\n",
+              "description": "For each property owner:\n- pronoun\n- first name\n- last name\n- email\n- phone number\n\nDetails of the property (just its address)\nAnd supporting documents",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "a042f8e6-7858-405e-ac35-62eed4e3bb7b",
+                  "title": "Repeated Applications",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly sends applications to the system, slowing down access for other actors",
+                  "mitigation": "As a simple mitigation, limit the number of applications from a single phone number or email address in a certain time frame.\n\nPut a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 57,
+                  "score": ""
+                },
+                {
+                  "id": "566fe011-1b47-41aa-9f61-e4c61e27bf00",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept packets meant for the system, modify the data, then forward it to the system. They could also intercept the applicant's personal information and supporting documents, and use them for their personal gain.",
+                  "mitigation": "Require HTTPS and transport layer security. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 59,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "e2c3edc0-93ac-4775-8c60-dfe94a794069",
             "labels": [
-              "Supporting documents"
+              "Application details\n"
+            ],
+            "source": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "target": {
+              "cell": "7a4334c6-84b6-4218-88a0-1caadf7a8ea9"
+            },
+            "vertices": [
+              {
+                "x": 350,
+                "y": 90
+              },
+              {
+                "x": 430,
+                "y": 90
+              }
             ]
           },
           {
@@ -2157,9 +1845,26 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "hasOpenThreats": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "aebb22e9-580a-4058-b45a-2c03509fe884",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept packets meant for the user, gaining access to the supporting documents",
+                  "mitigation": "Require HTTPS and transport layer security. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 61,
+                  "score": ""
+                }
+              ]
             },
             "id": "11c5fbff-71c5-4976-9755-7c1d3957db14",
+            "labels": [
+              "Supporting documents"
+            ],
             "source": {
               "cell": "70e4d0fa-5e83-493c-8459-977445fc6e2e"
             },
@@ -2168,13 +1873,612 @@
             },
             "vertices": [
               {
-                "x": 320,
-                "y": 140
+                "x": 300,
+                "y": 180
               }
-            ],
-            "labels": [
-              "Supporting documents"
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application status information",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "70c1e4db-4375-43a7-ad4d-6b7080a81d36",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept packets meant for the user, gaining access to their application information",
+                  "mitigation": "Require HTTPS and transport layer security. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 70,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "3f7322b9-1690-477d-a748-4ac7782148b1",
+            "labels": [
+              "Application status information"
+            ],
+            "source": {
+              "cell": "70e4d0fa-5e83-493c-8459-977445fc6e2e"
+            },
+            "target": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "vertices": [
+              {
+                "x": 360,
+                "y": 270
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application ID",
+              "description": "Also maybe a supporting documentation flag?",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "fa1a0443-e9ef-424b-b1ed-2c38cfc619e3",
+                  "title": "Brute Force Attack",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Given the application ID is only 8 characters, a threat actor could obtain it via brute force methods. This could lead to supporting documents being accessible to the threat actor.",
+                  "mitigation": "Rate limiting and logging could partially mitigate this threat. It could be further reduced by using a longer application ID, such as 16 characters, or preferably, implementing a login system for applications.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 62,
+                  "score": ""
+                },
+                {
+                  "id": "16305e32-7f38-467e-b9b9-95c63cbe3441",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor intercepts the application ID submitted to the application.",
+                  "mitigation": "Require HTTPS and transport layer security. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 63,
+                  "score": ""
+                },
+                {
+                  "id": "aee8260a-6531-4f8f-9970-80bc9999c1d2",
+                  "title": "Repeated Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly sends requests to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 67,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "77cc6cf4-f161-4ace-ac37-7ca1c126855f",
+            "labels": [
+              "Application ID"
+            ],
+            "source": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "target": {
+              "cell": "70e4d0fa-5e83-493c-8459-977445fc6e2e"
+            },
+            "vertices": [
+              {
+                "x": 390,
+                "y": 160
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Decision email",
+              "description": "Email with decision number and a letter of confirmation/denial.\nSent to all relevant applicants",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "aee8e2d5-3682-4a49-8f09-8652045a2cc9",
+            "labels": [
+              "Decision email"
+            ],
+            "source": {
+              "cell": "10321485-4662-47d2-b3ab-396010448f56"
+            },
+            "target": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "vertices": [
+              {
+                "x": 270,
+                "y": 460
+              },
+              {
+                "x": 200,
+                "y": 330
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Confirmation email",
+              "description": "Email with 8-digit application code \nconfirming application.\nAlso includes summary of the application.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "9c8e7560-6c42-46ce-a3b9-4d4cd88bc576",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept emails meant for the user, gaining access to their application ID, and therefore their supporting documents.",
+                  "mitigation": "Use an email provider with encryption and that can only be accessed through HTTPS",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 71,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "b4312452-ba3b-4d10-86d4-4cefbd208c8e",
+            "labels": [
+              "Confirmation email"
+            ],
+            "source": {
+              "cell": "7a4334c6-84b6-4218-88a0-1caadf7a8ea9"
+            },
+            "target": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "vertices": [
+              {
+                "x": 330,
+                "y": 400
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application information",
+              "description": "Summary of application and the extra information to be provided",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "a3c1b366-36f1-4f88-97ca-d1526378196c",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept emails meant for the user, gaining access to information about their application",
+                  "mitigation": "Use an email provider with encryption and that can only be accessed through HTTPS",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 74,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "34122417-c294-4ee7-8c33-6a2e05452518",
+            "labels": [
+              "Application information"
+            ],
+            "source": {
+              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
+            },
+            "target": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "vertices": [
+              {
+                "x": 230,
+                "y": 500
+              },
+              {
+                "x": 126.25,
+                "y": 240
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Additional Documentation",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "6431a549-0461-4669-b96e-3406a2e9a309",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept emails from the applicant to the council. This would allow them to gain access to the additional documentation about the application the applicant is sending.",
+                  "mitigation": "Use an email provider with encryption and that can only be accessed through HTTPS",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 75,
+                  "score": ""
+                },
+                {
+                  "id": "19a61a0c-1b51-434e-8f04-ec2fabf5de7f",
+                  "title": "Repeated Emails",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A threat actor could send repeated emails to the council system, overwhelming the server.",
+                  "mitigation": "It is assumed that this is handled by the email server.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 77,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "412d82c3-02e1-4e22-b20e-39877e14d330",
+            "labels": [
+              "Additional Documentation"
+            ],
+            "source": {
+              "cell": "e3aab63a-d73f-4433-9fda-9c2ac56476a4"
+            },
+            "target": {
+              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
+            },
+            "vertices": [
+              {
+                "x": 90,
+                "y": 240
+              },
+              {
+                "x": 126.25,
+                "y": 540
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Decision",
+              "description": "Decision number and decision status",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "ef7d14c2-973c-4599-a4ee-d1fa9697d3df",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept packets meant for the system, modify the intended action, then forward it to the system. ",
+                  "mitigation": "Require HTTPS and transport layer security. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 82,
+                  "score": ""
+                },
+                {
+                  "id": "d846c6ef-ee5e-4239-963f-7f633d558421",
+                  "title": "Repeated Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly sends requests to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 83,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "540f6c92-ad25-40bd-9c21-1e49d81c6bb7",
+            "labels": [
+              "Decision"
+            ],
+            "source": {
+              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
+            },
+            "target": {
+              "cell": "10321485-4662-47d2-b3ab-396010448f56"
+            },
+            "vertices": [
+              {
+                "x": 626.25,
+                "y": 400
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Additional documentation",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "a4cbfc1e-8e7e-4551-9b04-3bb0479109f9",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept packets meant for the system, modify the intended action or steal data, then forward it to the system. ",
+                  "mitigation": "Require HTTPS and transport layer security. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 84,
+                  "score": ""
+                },
+                {
+                  "id": "4f929090-27eb-4277-bfec-a560af84fedc",
+                  "title": "Repeated Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly sends requests to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 85,
+                  "score": ""
+                },
+                {
+                  "id": "373408a2-d0c7-45ae-9e2d-7928ab5769d7",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 0,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "4fbaa5c8-d7e7-4acb-9616-e005b0ae5983",
+            "labels": [
+              "Additional documentation"
+            ],
+            "source": {
+              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
+            },
+            "target": {
+              "cell": "fa080330-b2ec-43e1-966e-3c6daca5fe4c"
+            },
+            "vertices": [
+              {
+                "x": 760,
+                "y": 430
+              },
+              {
+                "x": 740,
+                "y": 410
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Application\nInformation",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "377f3c5b-01ed-45a0-b728-428b2a3f442c",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept packets meant for the staff member. ",
+                  "mitigation": "Require HTTPS and transport layer security. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 87,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "05826def-6449-4812-90bb-2b75a73baf93",
+            "labels": [
+              "Application\nInformation"
+            ],
+            "source": {
+              "cell": "cf0aaefa-86b3-405d-8b59-4642ad9a6aad"
+            },
+            "target": {
+              "cell": "5bdd00b3-9a06-4ee8-b3d4-f71ce5e98a82"
+            }
           },
           {
             "position": {
@@ -2947,6 +3251,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 56
+    "threatTop": 87
   }
 }
