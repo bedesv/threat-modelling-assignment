@@ -1334,8 +1334,8 @@
                 "text": "Consult\nprogress of\napplication"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               }
             },
@@ -1350,8 +1350,61 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "privilegeLevel": "",
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "f6394eca-4784-4d0f-ac65-ba0ff0b378b0",
+                  "title": "Stealing Details with Fake Page",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "A threat actor creates a fake page resembling the real page. This is then used to trick applicants into sharing their application ID with the threat actor.",
+                  "mitigation": "Purchase similar domain names so that threat actors can't use them. Use a simple domain name so it's easier for the users to identify.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 97,
+                  "score": ""
+                },
+                {
+                  "id": "d578110e-da71-4076-b800-a9c5453521cd",
+                  "title": "Repeated Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Repeated requests by an actor use significant resources such as CPU and memory",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 98,
+                  "score": ""
+                },
+                {
+                  "id": "63e03cec-a387-474c-9fed-e2aa1118ca78",
+                  "title": "Distributed Denial of Service Attack",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Similarly to the repeated login attempts, a distributed denial of service attack can cause significant CPU and memory usage. It can be hard to mitigate because requests come from lots of different sources, so can't all be blocked.",
+                  "mitigation": "Use an access control list and scale up server capacity to allow for more concurrent requests. It is assumed that this is managed by the cloud service provider.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 99,
+                  "score": ""
+                },
+                {
+                  "id": "26f815d3-50f5-4613-9e58-20ba7302907f",
+                  "title": "SQL/Code Injection",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "When user inputs are not sanitised and handled correctly by the process, it can lead to malicious actions being performed within the process, leading the threat actor performing actions they don't have the privileges to do.",
+                  "mitigation": "Sanitise user input so that it can't be executed as code.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 100,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -3317,6 +3370,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 96
+    "threatTop": 100
   }
 }
