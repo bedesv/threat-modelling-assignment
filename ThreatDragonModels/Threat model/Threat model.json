@@ -1056,6 +1056,1053 @@
             }
           }
         ]
+      },{
+        "id": 4,
+        "title": "login",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.0.4-RC2",
+        "cells": [
+          {
+            "position": {
+              "x": 172.5,
+              "y": 150
+            },
+            "size": {
+              "width": 150,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "Council Staff/\nSystem Administrator"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 3,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 1,
+            "id": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Council Staff/\nSystem Administrator",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "providesAuthentication": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "35aa4b02-490e-4371-b891-3b272e6ddbfa",
+                  "title": "Staff Credentials Stolen",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Staff credentials can be stolen via methods including brute force attacks, man in the middle attacks, them writing their details on a sticky note on their monitor, etc",
+                  "mitigation": "Require two factor authentication and passwords that contain at least 10 characters, including at least one of each of upper case letter, lower case letter, number, and special character. Provide training to staff on best practices for password security.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                },
+                {
+                  "id": "6a5c0dbe-e587-436c-af06-15cb15824a18",
+                  "title": "Staff Session Hijacked",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Staff session tokens get stolen by a threat actor and used maliciously to use the application as the staff member.",
+                  "mitigation": "Use secure cookies with a session token sufficient length and entropy (128 bits long and at 64 bits of entropy). Also provide staff with training on avoiding phishing attacks and use email filters.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                },
+                {
+                  "id": "9b950ff8-a1fb-4f6f-9d73-bdc92531152c",
+                  "title": "Spoofed Account Performing Malicious Actions",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Accounts that have been spoofed can perform malicious acts without being able to prove whether the account was stolen by a threat actor.",
+                  "mitigation": "Log all actions taken by actors, including login attempts with the actor's ip address, to ensure that the source of actions can be traced back to the actor that initiated them.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                }
+              ]
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Authentication Token",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "419f88c8-4236-4064-a21a-6f3d0194c8ab",
+            "labels": [
+              "Authentication Token"
+            ],
+            "source": {
+              "cell": "119e4316-ceb6-4752-861b-9d86c283d03f"
+            },
+            "target": {
+              "cell": "4d1d97f6-c851-43ba-9e9a-0bdf3addfc35"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Request\n",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "4f893cf8-82c0-45b2-91bb-963a47ae4f84",
+            "labels": [
+              "Request\n"
+            ],
+            "source": {
+              "cell": "4d1d97f6-c851-43ba-9e9a-0bdf3addfc35"
+            },
+            "target": {
+              "cell": "4458ebe9-1876-4397-bffa-edc1926bd79c"
+            },
+            "vertices": [
+              {
+                "x": 620,
+                "y": 230
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Authentication Token",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "1f52394a-57ef-4f35-9543-d692e0517836",
+            "labels": [
+              "Authentication Token"
+            ],
+            "source": {
+              "cell": "119e4316-ceb6-4752-861b-9d86c283d03f"
+            },
+            "target": {
+              "cell": "c3a49971-8711-4fba-802e-cf500d43d9f2"
+            },
+            "vertices": [
+              {
+                "x": 750,
+                "y": 300
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Delete Authentication Token",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "4761c615-e2af-4363-b5c8-9d2b1b110ba5",
+            "labels": [
+              "Delete Authentication Token"
+            ],
+            "source": {
+              "cell": "c3a49971-8711-4fba-802e-cf500d43d9f2"
+            },
+            "target": {
+              "cell": "119e4316-ceb6-4752-861b-9d86c283d03f"
+            },
+            "vertices": [
+              {
+                "x": 840,
+                "y": 330
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Authentication Token",
+              "description": "Auth token with a 1 week timeout",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "4670f34f-9210-44f7-ac85-bcbd39041ade",
+            "labels": [
+              "Authentication Token"
+            ],
+            "source": {
+              "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
+            },
+            "target": {
+              "cell": "119e4316-ceb6-4752-861b-9d86c283d03f"
+            },
+            "vertices": [
+              {
+                "x": 620,
+                "y": 120
+              },
+              {
+                "x": 690,
+                "y": 140
+              },
+              {
+                "x": 740,
+                "y": 160
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Hashed Password",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "663e6e89-0b8a-4c8c-a4ec-f8ae6fde338e",
+            "labels": [
+              "Hashed Password"
+            ],
+            "source": {
+              "cell": "119e4316-ceb6-4752-861b-9d86c283d03f"
+            },
+            "target": {
+              "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
+            },
+            "vertices": [
+              {
+                "x": 690,
+                "y": 83
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Username",
+              "description": "Request the hashed password for the given username",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "10548b41-d64e-4599-b195-425276888ff4",
+            "labels": [
+              "Username"
+            ],
+            "source": {
+              "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
+            },
+            "target": {
+              "cell": "119e4316-ceb6-4752-861b-9d86c283d03f"
+            },
+            "vertices": [
+              {
+                "x": 670,
+                "y": 40
+              },
+              {
+                "x": 780,
+                "y": 90
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Authentication Response",
+              "description": "Either an authentication token with a 1 week timeout (if login successful), or a message saying login details were incorrect, but not specifying why (if not)",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "65327f8e-4854-4a27-ac5a-ca1ab6ee6527",
+                  "title": "Disclosure of Used Usernames",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "When the actor supplies an incorrect or invalid username or password, they can determine whether the username is used in the system because the feedback specifies which field is invalid.",
+                  "mitigation": "Only provide generic feedback stating that the username or password is incorrect.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "2149346a-a7bb-4b28-bf56-9ca662abad5b",
+            "labels": [
+              "Authentication Response"
+            ],
+            "source": {
+              "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
+            },
+            "target": {
+              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
+            },
+            "vertices": [
+              {
+                "x": 450,
+                "y": 83
+              },
+              {
+                "x": 350,
+                "y": 130
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "User Details",
+              "description": "Username and password",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "858aa1a2-f2a7-41d6-b70f-86478b9be1e4",
+                  "title": "Network Tampering (Adversary in the Middle Attack)",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Threat actor intercepts network traffic with the staff member's user details ",
+                  "mitigation": "Mitigated - Encrypt all network communication and use transport layer security",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                },
+                {
+                  "id": "80a70fb4-63cb-4bf3-8dda-6afc00018a3e",
+                  "title": "Denial of Service From Repeated Login Attempts",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly attempts to login to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff logins behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "68fc13d9-7574-45fc-9d65-3faee0306802",
+            "labels": [
+              "User Details"
+            ],
+            "source": {
+              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
+            },
+            "target": {
+              "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
+            },
+            "vertices": [
+              {
+                "x": 320,
+                "y": 80
+              },
+              {
+                "x": 370,
+                "y": 50
+              },
+              {
+                "x": 390,
+                "y": 50
+              },
+              {
+                "x": 440,
+                "y": 40
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Request\n",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "8d064755-3719-4963-94b2-9ce7d249fa1a",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept packets meant for the system, modify the intended action, then forward it to the system. ",
+                  "mitigation": "Require HTTPS and transport layer security. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 34,
+                  "score": ""
+                },
+                {
+                  "id": "aa8a1345-b73a-46a4-8e73-a7712892dea8",
+                  "title": "Repeated Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly sends requests to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 36,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "2dc5ff95-0504-4ab7-930b-4394a2537f86",
+            "labels": [
+              "Request\n"
+            ],
+            "source": {
+              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
+            },
+            "target": {
+              "cell": "4d1d97f6-c851-43ba-9e9a-0bdf3addfc35"
+            },
+            "vertices": [
+              {
+                "x": 420,
+                "y": 184
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Authentication Token",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "bbe6502d-f0b3-45a5-9ebc-f8adcfb8fddc",
+                  "title": "Repeated Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly sends requests to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 52,
+                  "score": ""
+                },
+                {
+                  "id": "b9a2f442-6120-4e81-ae62-6d04c5d43fa3",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept packets meant for the system, steal the authentication token, then discard the packet so the logout request is not completed. The threat actor then has a authentication token for a staff member.",
+                  "mitigation": "Require HTTPS and transport layer security. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 55,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "12234bf2-02c9-4875-bf5a-49be988f3a37",
+            "labels": [
+              "Authentication Token"
+            ],
+            "source": {
+              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
+            },
+            "target": {
+              "cell": "c3a49971-8711-4fba-802e-cf500d43d9f2"
+            },
+            "vertices": [
+              {
+                "x": 490,
+                "y": 310
+              }
+            ]
+          },
+          {
+            "shape": "trust-broundary-curve",
+            "attrs": {
+              "line": {
+                "targetMarker": "",
+                "sourceMarker": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "labels": [
+              "User/Web Server Boundary"
+            ],
+            "data": {
+              "type": "tm.Boundary",
+              "name": "User/Web Server Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "ea62a7c7-1efe-46aa-9dee-7b0ee785648e",
+            "source": {
+              "x": 440,
+              "y": -40
+            },
+            "target": {
+              "x": 400,
+              "y": 450
+            }
+          },
+          {
+            "position": {
+              "x": 780,
+              "y": 160
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Authentication\nStore"
+              },
+              "topLine": {
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "id": "119e4316-ceb6-4752-861b-9d86c283d03f",
+            "zIndex": 11,
+            "data": {
+              "type": "tm.Store",
+              "name": "Authentication\nStore",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "isALog": false,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "798cd3e7-d801-4ac9-aa4f-42008051cb85",
+                  "title": "Data Tampering",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "An actor gains access to the authentication store and alters or removes entries",
+                  "mitigation": "Store database credentials in a secure location and not in plain text. Store user credentials in an encrypted form. Again use the least privileged principle. Also only allow read access to the database from the login endpoint.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                },
+                {
+                  "id": "68331f82-c169-48c3-8a8b-5651ad7c7d7f",
+                  "title": "Visibility of Restricted Data",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Staff members should not be able to see information about other actors credentials. ",
+                  "mitigation": "Apply the least privileged principle to ensure the minimum amount data is visible.  ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 630,
+              "y": 380
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Logout"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 3,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 12,
+            "id": "c3a49971-8711-4fba-802e-cf500d43d9f2",
+            "data": {
+              "type": "tm.Process",
+              "name": "Logout",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "aae4960e-0547-4ad6-a9fc-22aff3d6b323",
+                  "title": "Repeated Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly sends requests to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 53,
+                  "score": ""
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 520,
+              "y": 50
+            },
+            "size": {
+              "width": 60,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Login"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 3,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 13,
+            "id": "8cba2fc4-fac3-458f-9d68-30db979c228e",
+            "data": {
+              "type": "tm.Process",
+              "name": "Login",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "84900c91-bd29-44b7-a568-4554a57d977c",
+                  "title": "Stealing Credentials with Fake Login Page",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "A threat actor creates a fake login page resembling the real login page. This is then used to trick staff members into sharing their login details with the threat actor.",
+                  "mitigation": "Purchase similar domain names so that threat actors can't use them. Use a simple domain name so it's easier for the users to identify.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 26,
+                  "score": ""
+                },
+                {
+                  "id": "d4761636-b479-4441-92aa-5d4b1c789b6c",
+                  "title": "Disclosure of Used Usernames",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "When the actor supplies an incorrect or invalid username or password, they can determine whether the username is used in the system because the feedback specifies which field is invalid.",
+                  "mitigation": "Only provide generic feedback stating that the username or password is incorrect.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 29,
+                  "score": ""
+                },
+                {
+                  "id": "62d1aeb5-5490-4aab-a051-cecfafdda1e4",
+                  "title": "Repeated Login Attempts",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Repeated login attempts by an actor use significant resources such as CPU and memory",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 30,
+                  "score": ""
+                },
+                {
+                  "id": "62a86ede-0cfd-489b-b80d-1924fabf335b",
+                  "title": "Distributed Denial of Service Attack",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Similarly to the repeated login attempts, a distributed denial of service attack can cause significant CPU and memory usage. It can be hard to mitigate because requests come from lots of different sources, so can't all be blocked.",
+                  "mitigation": "Use an access control list and scale up server capacity to allow for more concurrent requests. It is assumed that this is managed by the cloud service provider.\n\nAdditionally, you could put staff logins behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 31,
+                  "score": ""
+                },
+                {
+                  "id": "05d1d19d-cb5d-45ec-9386-97c8ec760bae",
+                  "title": "SQL Injection",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "When user inputs are not sanitised and handled correctly by the process, it can lead to malicious actions being performed within the process, leading the threat actor performing actions they don't have the privileges to do.",
+                  "mitigation": "Sanitise user input so that it can't be executed as code.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 32,
+                  "score": ""
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 510,
+              "y": 140
+            },
+            "size": {
+              "width": 80,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "Authenticate"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 3,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 14,
+            "id": "4d1d97f6-c851-43ba-9e9a-0bdf3addfc35",
+            "data": {
+              "type": "tm.Process",
+              "name": "Authenticate",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "9585975c-c278-4dc4-9309-e8d94e3c6ad7",
+                  "title": "Session Hijacking",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Staff session tokens get stolen by a threat actor and used maliciously to use the application as the staff member.",
+                  "mitigation": "Use secure cookies with a session token sufficient length and entropy (128 bits long and at 64 bits of entropy). Also provide staff with training on avoiding phishing attacks and use email filters.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 40,
+                  "score": ""
+                },
+                {
+                  "id": "2b31d9c8-465f-4ea3-95c3-e1e84fa890e9",
+                  "title": "Repeated Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Repeated request attempts by an actor use significant resources such as CPU and memory",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 48,
+                  "score": ""
+                },
+                {
+                  "id": "c5299401-f4c8-4ab4-94e4-d684556ecdf6",
+                  "title": "Performing Actions Above Privilege Level",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "By failing to restrict administration actions, staff members could perform actions above their privilege level.",
+                  "mitigation": "Implement role based authorisation for all system actions.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 51,
+                  "score": ""
+                }
+              ]
+            }
+          },
+          {
+            "position": {
+              "x": 580,
+              "y": 280
+            },
+            "size": {
+              "width": 80,
+              "height": 80
+            },
+            "attrs": {
+              "text": {
+                "text": "Generic \nStaff Action"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 15,
+            "id": "4458ebe9-1876-4397-bffa-edc1926bd79c",
+            "data": {
+              "type": "tm.Process",
+              "name": "Generic \nStaff Action",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "privilegeLevel": "",
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          }
+        ]
       },
       {
         "id": 0,
