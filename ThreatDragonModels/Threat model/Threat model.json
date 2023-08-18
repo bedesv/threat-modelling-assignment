@@ -3274,7 +3274,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "red",
+                "stroke": "#333333",
+                "strokeWidth": 1,
                 "targetMarker": {
                   "name": "classic"
                 },
@@ -3294,19 +3295,19 @@
               "protocol": "",
               "isEncrypted": false,
               "isPublicNetwork": false,
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "threats": [
                 {
-                  "id": "b6af1856-d371-4178-8419-477e2c212d28",
-                  "title": "New STRIDE threat",
-                  "status": "Open",
+                  "id": "261a91dc-112d-42ad-b8a2-ee4a9dcf89c1",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
                   "severity": "Medium",
-                  "type": "Information disclosure",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "type": "Tampering",
+                  "description": "If a threat actor intercepts the network packets meant for the user, they could access private information.",
+                  "mitigation": "Encrypt all network communication and use transport layer security",
                   "modelType": "STRIDE",
-                  "new": true,
-                  "number": 0,
+                  "new": false,
+                  "number": 141,
                   "score": ""
                 }
               ]
@@ -3637,6 +3638,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 138
+    "threatTop": 141
   }
 }
