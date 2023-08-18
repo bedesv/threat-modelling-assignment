@@ -1,5 +1,5 @@
 {
-  "version": "2.0.3",
+  "version": "2.0.4-RC2",
   "summary": {
     "title": "Threat model",
     "owner": "",
@@ -3224,8 +3224,8 @@
                 "text": "Admin"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               }
             },
@@ -3240,8 +3240,35 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "providesAuthentication": false,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "9b0bd92d-46ad-4f11-b2d3-6b16c6afd4cf",
+                  "title": "Staff Credentials Stolen",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Staff credentials can be stolen via methods including brute force attacks, man in the middle attacks, them writing their details on a sticky note on their monitor, etc",
+                  "mitigation": "Require two factor authentication and passwords that contain at least 10 characters, including at least one of each of upper case letter, lower case letter, number, and special character. Provide training to staff on best practices for password security.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 124,
+                  "score": ""
+                },
+                {
+                  "id": "57d930d6-a17d-40bd-8725-a00d19925aca",
+                  "title": "Staff Session Hijacked",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Staff session tokens get stolen by a threat actor and used maliciously to use the application as the staff member.",
+                  "mitigation": "Use secure cookies with a session token sufficient length and entropy (128 bits long and at 64 bits of entropy). Also provide staff with training on avoiding phishing attacks and use email filters.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 125,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -3479,6 +3506,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 123
+    "threatTop": 125
   }
 }
