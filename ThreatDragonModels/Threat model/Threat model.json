@@ -1,5 +1,5 @@
 {
-  "version": "2.0.4-RC2",
+  "version": "2.0.5",
   "summary": {
     "title": "Threat model",
     "owner": "",
@@ -1056,9 +1056,10 @@
             }
           }
         ]
-      },{
+      },
+      {
         "id": 4,
-        "title": "login",
+        "title": "login - updated",
         "diagramType": "STRIDE",
         "placeholder": "New STRIDE diagram description",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
