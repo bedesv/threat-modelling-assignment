@@ -3339,7 +3339,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Admin"
+                "text": "System \nAdministrator"
               },
               "body": {
                 "stroke": "red",
@@ -3353,7 +3353,7 @@
             "id": "a669be97-51f8-491a-b1ae-edd84788f3a8",
             "data": {
               "type": "tm.Actor",
-              "name": "Admin",
+              "name": "System \nAdministrator",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
