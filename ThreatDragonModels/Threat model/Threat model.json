@@ -3648,11 +3648,13 @@
                 "text": "Building Consent\nStore"
               },
               "topLine": {
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               }
             },
@@ -3670,8 +3672,22 @@
               "storesCredentials": false,
               "isEncrypted": false,
               "isSigned": false,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "72a0c492-c23c-4ea3-bb0d-948c9883de20",
+                  "title": "Data Leak",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Private data could be leaked from the system ",
+                  "mitigation": "Secure database access behind a firewall and access control",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 148,
+                  "score": ""
+                }
+              ]
             }
           }
         ]
@@ -3679,6 +3695,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 147
+    "threatTop": 148
   }
 }
