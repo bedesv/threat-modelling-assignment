@@ -1,5 +1,5 @@
 {
-  "version": "2.0.5",
+  "version": "2.0.4-RC2",
   "summary": {
     "title": "Threat model",
     "owner": "",
@@ -1524,10 +1524,205 @@
             ]
           },
           {
+            "shape": "trust-broundary-curve",
+            "attrs": {
+              "line": {
+                "targetMarker": "",
+                "sourceMarker": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "labels": [
+              "User/Web Server Boundary"
+            ],
+            "data": {
+              "type": "tm.Boundary",
+              "name": "User/Web Server Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "ea62a7c7-1efe-46aa-9dee-7b0ee785648e",
+            "source": {
+              "x": 440,
+              "y": -40
+            },
+            "target": {
+              "x": 400,
+              "y": 450
+            },
+            "vertices": [
+              {
+                "x": 250,
+                "y": 10
+              },
+              {
+                "x": 120,
+                "y": 200
+              },
+              {
+                "x": 230,
+                "y": 380
+              }
+            ]
+          },
+          {
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "red",
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Authentication Token",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "bbe6502d-f0b3-45a5-9ebc-f8adcfb8fddc",
+                  "title": "Repeated Requests",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly sends requests to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, staff pages are behind a firewall and only allow access from the local council network or through a secure VPN. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 52,
+                  "score": ""
+                },
+                {
+                  "id": "b9a2f442-6120-4e81-ae62-6d04c5d43fa3",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept packets meant for the system, steal the authentication token, then discard the packet so the logout request is not completed. The threat actor then has a authentication token for a staff member.",
+                  "mitigation": "Require HTTPS and transport layer security. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 55,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "12234bf2-02c9-4875-bf5a-49be988f3a37",
+            "labels": [
+              "Authentication Token"
+            ],
+            "source": {
+              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
+            },
+            "target": {
+              "cell": "c3a49971-8711-4fba-802e-cf500d43d9f2"
+            },
+            "vertices": [
+              {
+                "x": 410,
+                "y": 270
+              },
+              {
+                "x": 490,
+                "y": 310
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Request\n",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "8d064755-3719-4963-94b2-9ce7d249fa1a",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A threat actor can intercept packets meant for the system, modify the intended action, then forward it to the system. ",
+                  "mitigation": "Require HTTPS and transport layer security. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 34,
+                  "score": ""
+                },
+                {
+                  "id": "aa8a1345-b73a-46a4-8e73-a7712892dea8",
+                  "title": "Repeated Requests",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly sends requests to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, staff pages are behind a firewall and only allow access from the local council network or through a secure VPN. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 36,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "2dc5ff95-0504-4ab7-930b-4394a2537f86",
+            "labels": [
+              "Request\n"
+            ],
+            "source": {
+              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
+            },
+            "target": {
+              "cell": "4d1d97f6-c851-43ba-9e9a-0bdf3addfc35"
+            },
+            "vertices": [
+              {
+                "x": 420,
+                "y": 184
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
                 "targetMarker": {
                   "name": "classic"
                 },
@@ -1547,7 +1742,7 @@
               "protocol": "",
               "isEncrypted": false,
               "isPublicNetwork": false,
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "threats": [
                 {
                   "id": "858aa1a2-f2a7-41d6-b70f-86478b9be1e4",
@@ -1565,11 +1760,11 @@
                 {
                   "id": "80a70fb4-63cb-4bf3-8dda-6afc00018a3e",
                   "title": "Denial of Service From Repeated Login Attempts",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "A malicious actor repeatedly attempts to login to the system, slowing down access for other actors",
-                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff logins behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, staff pages are behind a firewall and only allow access from the local council network or through a secure VPN. ",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 11,
@@ -1605,180 +1800,6 @@
                 "y": 40
               }
             ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Request\n",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": true,
-              "threats": [
-                {
-                  "id": "8d064755-3719-4963-94b2-9ce7d249fa1a",
-                  "title": "Adversary in the Middle Attack",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "A threat actor can intercept packets meant for the system, modify the intended action, then forward it to the system. ",
-                  "mitigation": "Require HTTPS and transport layer security. ",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 34,
-                  "score": ""
-                },
-                {
-                  "id": "aa8a1345-b73a-46a4-8e73-a7712892dea8",
-                  "title": "Repeated Requests",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Denial of service",
-                  "description": "A malicious actor repeatedly sends requests to the system, slowing down access for other actors",
-                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 36,
-                  "score": ""
-                }
-              ]
-            },
-            "id": "2dc5ff95-0504-4ab7-930b-4394a2537f86",
-            "labels": [
-              "Request\n"
-            ],
-            "source": {
-              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
-            },
-            "target": {
-              "cell": "4d1d97f6-c851-43ba-9e9a-0bdf3addfc35"
-            },
-            "vertices": [
-              {
-                "x": 420,
-                "y": 184
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "red",
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Authentication Token",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": true,
-              "threats": [
-                {
-                  "id": "bbe6502d-f0b3-45a5-9ebc-f8adcfb8fddc",
-                  "title": "Repeated Requests",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Denial of service",
-                  "description": "A malicious actor repeatedly sends requests to the system, slowing down access for other actors",
-                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 52,
-                  "score": ""
-                },
-                {
-                  "id": "b9a2f442-6120-4e81-ae62-6d04c5d43fa3",
-                  "title": "Adversary in the Middle Attack",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "A threat actor can intercept packets meant for the system, steal the authentication token, then discard the packet so the logout request is not completed. The threat actor then has a authentication token for a staff member.",
-                  "mitigation": "Require HTTPS and transport layer security. ",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 55,
-                  "score": ""
-                }
-              ]
-            },
-            "id": "12234bf2-02c9-4875-bf5a-49be988f3a37",
-            "labels": [
-              "Authentication Token"
-            ],
-            "source": {
-              "cell": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd"
-            },
-            "target": {
-              "cell": "c3a49971-8711-4fba-802e-cf500d43d9f2"
-            },
-            "vertices": [
-              {
-                "x": 490,
-                "y": 310
-              }
-            ]
-          },
-          {
-            "shape": "trust-broundary-curve",
-            "attrs": {
-              "line": {
-                "targetMarker": "",
-                "sourceMarker": ""
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "labels": [
-              "User/Web Server Boundary"
-            ],
-            "data": {
-              "type": "tm.Boundary",
-              "name": "User/Web Server Boundary",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "id": "ea62a7c7-1efe-46aa-9dee-7b0ee785648e",
-            "source": {
-              "x": 440,
-              "y": -40
-            },
-            "target": {
-              "x": 400,
-              "y": 450
-            }
           },
           {
             "position": {
@@ -2099,6 +2120,40 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "privilegeLevel": "",
+              "hasOpenThreats": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 30,
+              "y": 330
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Anonymous User"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "id": "a3aad2da-8eb6-4f75-b7da-02cd2bbc1fee",
+            "zIndex": 16,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Anonymous User",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "providesAuthentication": false,
               "hasOpenThreats": false,
               "threats": []
             }
