@@ -3417,8 +3417,8 @@
                 "text": "Create\nAccount"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               }
             },
@@ -3433,8 +3433,35 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "privilegeLevel": "",
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "f8dc5d23-2cc9-4d99-a618-73f465fe2b5c",
+                  "title": "Repeated Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Repeated requests by an actor use significant resources such as CPU and memory",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 142,
+                  "score": ""
+                },
+                {
+                  "id": "f46c62d4-00d0-48a6-b80c-cc720f2ff943",
+                  "title": "Denying User Creation",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Log all interactions with the system, including the ip address of the actor, and their account details.",
+                  "mitigation": "Log all interactions with the system, including the ip address of the actor, and their account details.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 146,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -3468,7 +3495,21 @@
               "reasonOutOfScope": "",
               "privilegeLevel": "",
               "hasOpenThreats": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "10619e76-4be6-48a7-9521-11bb085c451d",
+                  "title": "Denying User Deletion",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "A threat actor could delete a user and deny they did it",
+                  "mitigation": "Log all interactions with the system, including the ip address of the actor, and their account details.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 147,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -3638,6 +3679,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 141
+    "threatTop": 147
   }
 }
