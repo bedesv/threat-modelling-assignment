@@ -28,7 +28,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Staff"
+                "text": "Council Staff\nMember/Admin"
               },
               "body": {
                 "stroke": "red",
@@ -42,7 +42,7 @@
             "id": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd",
             "data": {
               "type": "tm.Actor",
-              "name": "Staff",
+              "name": "Council Staff\nMember/Admin",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -392,6 +392,9 @@
               "threats": []
             },
             "id": "10548b41-d64e-4599-b195-425276888ff4",
+            "labels": [
+              "Username"
+            ],
             "source": {
               "cell": "8cba2fc4-fac3-458f-9d68-30db979c228e"
             },
@@ -407,9 +410,6 @@
                 "x": 780,
                 "y": 90
               }
-            ],
-            "labels": [
-              "Username"
             ]
           },
           {
