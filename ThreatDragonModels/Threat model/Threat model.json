@@ -1067,6 +1067,31 @@
         "cells": [
           {
             "position": {
+              "x": 119.99999999999682,
+              "y": 20.000000000004093
+            },
+            "size": {
+              "width": 930,
+              "height": 435.93750000000006
+            },
+            "shape": "trust-boundary-box",
+            "attrs": {
+              "headerText": {
+                "text": "Firewall"
+              }
+            },
+            "id": "39d77ec5-22e0-44f2-84fc-cf1ff2ca33f1",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Firewall",
+              "description": "Staff pages are behind a firewall and access is only allowed from the local council network or through a secure VPN.\n",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
               "x": 172.5,
               "y": 150
             },
@@ -1524,52 +1549,6 @@
             ]
           },
           {
-            "shape": "trust-broundary-curve",
-            "attrs": {
-              "line": {
-                "targetMarker": "",
-                "sourceMarker": ""
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "labels": [
-              "User/Web Server Boundary"
-            ],
-            "data": {
-              "type": "tm.Boundary",
-              "name": "User/Web Server Boundary",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "id": "ea62a7c7-1efe-46aa-9dee-7b0ee785648e",
-            "source": {
-              "x": 440,
-              "y": -40
-            },
-            "target": {
-              "x": 400,
-              "y": 450
-            },
-            "vertices": [
-              {
-                "x": 250,
-                "y": 10
-              },
-              {
-                "x": 120,
-                "y": 200
-              },
-              {
-                "x": 230,
-                "y": 380
-              }
-            ]
-          },
-          {
             "shape": "flow",
             "attrs": {
               "line": {
@@ -1802,6 +1781,48 @@
             ]
           },
           {
+            "shape": "trust-broundary-curve",
+            "attrs": {
+              "line": {
+                "targetMarker": "",
+                "sourceMarker": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "labels": [
+              "User/Web Server Boundary"
+            ],
+            "data": {
+              "type": "tm.Boundary",
+              "name": "User/Web Server Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "ea62a7c7-1efe-46aa-9dee-7b0ee785648e",
+            "source": {
+              "x": 300,
+              "y": 20
+            },
+            "target": {
+              "x": 400,
+              "y": 450
+            },
+            "vertices": [
+              {
+                "x": 370,
+                "y": 180
+              },
+              {
+                "x": 420,
+                "y": 360
+              }
+            ]
+          },
+          {
             "position": {
               "x": 780,
               "y": 160
@@ -1882,8 +1903,8 @@
                 "text": "Logout"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 3,
+                "stroke": "#333333",
+                "strokeWidth": 1,
                 "strokeDasharray": null
               }
             },
@@ -1898,16 +1919,16 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "privilegeLevel": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "threats": [
                 {
                   "id": "aae4960e-0547-4ad6-a9fc-22aff3d6b323",
                   "title": "Repeated Requests",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "A malicious actor repeatedly sends requests to the system, slowing down access for other actors",
-                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, staff pages are behind a firewall and access is only allowed from the local council network or through a secure VPN. This prevents denial of service attacks from external actors.\n",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 53,
@@ -1977,11 +1998,11 @@
                 {
                   "id": "62d1aeb5-5490-4aab-a051-cecfafdda1e4",
                   "title": "Repeated Login Attempts",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Denial of service",
-                  "description": "Repeated login attempts by an actor use significant resources such as CPU and memory",
-                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "description": "Repeated login attempts by a malicious actor use significant resources such as CPU and memory",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, staff pages are behind a firewall and access is only allowed from the local council network or through a secure VPN. This prevents denial of service attacks from external actors.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 30,
@@ -1990,11 +2011,11 @@
                 {
                   "id": "62a86ede-0cfd-489b-b80d-1924fabf335b",
                   "title": "Distributed Denial of Service Attack",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Similarly to the repeated login attempts, a distributed denial of service attack can cause significant CPU and memory usage. It can be hard to mitigate because requests come from lots of different sources, so can't all be blocked.",
-                  "mitigation": "Use an access control list and scale up server capacity to allow for more concurrent requests. It is assumed that this is managed by the cloud service provider.\n\nAdditionally, you could put staff logins behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "mitigation": "Staff logins are behind a firewall and access is only allowed from the local council network or through a secure VPN.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 31,
@@ -2068,7 +2089,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Repeated request attempts by an actor use significant resources such as CPU and memory",
-                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff pages behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, staff pages are behind a firewall and access is only allowed from the local council network or through a secure VPN. This prevents denial of service attacks from external actors.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 48,
@@ -2120,40 +2141,6 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "privilegeLevel": "",
-              "hasOpenThreats": false,
-              "threats": []
-            }
-          },
-          {
-            "position": {
-              "x": 30,
-              "y": 330
-            },
-            "size": {
-              "width": 112.5,
-              "height": 60
-            },
-            "attrs": {
-              "text": {
-                "text": "Anonymous User"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
-              }
-            },
-            "visible": true,
-            "shape": "actor",
-            "id": "a3aad2da-8eb6-4f75-b7da-02cd2bbc1fee",
-            "zIndex": 16,
-            "data": {
-              "type": "tm.Actor",
-              "name": "Anonymous User",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "providesAuthentication": false,
               "hasOpenThreats": false,
               "threats": []
             }
