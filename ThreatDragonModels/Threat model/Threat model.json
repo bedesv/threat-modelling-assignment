@@ -2770,51 +2770,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "SQL Response",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "ccdcd552-a4aa-446e-8192-e3de9ac936c5",
-            "labels": [
-              "SQL Response"
-            ],
-            "source": {
-              "cell": "e19e6ed8-29e4-4562-a2ab-73878d0dc28a"
-            },
-            "target": {
-              "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
-            },
-            "vertices": [
-              {
-                "x": 500,
-                "y": 373
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "SQL Statement",
               "description": "",
               "outOfScope": false,
@@ -2884,129 +2839,6 @@
               {
                 "x": 780,
                 "y": 400
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Account Details",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "ecceb616-7227-48bb-b50b-52cd02f439de",
-            "labels": [
-              "Account Details"
-            ],
-            "source": {
-              "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
-            },
-            "target": {
-              "cell": "93dc1206-6bc3-477f-8785-4daa646170c0"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Account Name",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "2e2c66d2-f84a-4447-9f54-d6ad17e53b69",
-            "labels": [
-              "Account Name"
-            ],
-            "source": {
-              "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
-            },
-            "target": {
-              "cell": "c2f3b295-a5a5-4370-aa24-54250c687a49"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "classic"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Account Details",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
-            "id": "1cffb4a2-05f6-4eb2-95d8-e68d072f3a8e",
-            "labels": [
-              "Account Details"
-            ],
-            "source": {
-              "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
-            },
-            "target": {
-              "cell": "a3c453b1-1727-4625-9c11-e9d8e99c8cb0"
-            },
-            "vertices": [
-              {
-                "x": 540,
-                "y": 250
               }
             ]
           },
@@ -3169,8 +3001,209 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Account Name",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "43094e4e-81d0-4a18-a9d8-b2562d416683",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Threat actor intercepts network traffic with the staff member's user details ",
+                  "mitigation": "Mitigated - Encrypt all network communication and use transport layer security",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 129,
+                  "score": ""
+                },
+                {
+                  "id": "54debfde-9ad2-4746-b386-4b9f2a221fa4",
+                  "title": "Denial of Service From Repeated Access Attempts",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A malicious actor repeatedly attempts to access the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff logins behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 130,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "2e2c66d2-f84a-4447-9f54-d6ad17e53b69",
+            "labels": [
+              "Account Name"
+            ],
+            "source": {
+              "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
+            },
+            "target": {
+              "cell": "c2f3b295-a5a5-4370-aa24-54250c687a49"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Account Details",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "adba8d15-7a91-4f5a-b770-a38b89a9904d",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Threat actor intercepts network traffic with the staff member's user details ",
+                  "mitigation": "Encrypt all network communication and use transport layer security",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 127,
+                  "score": ""
+                },
+                {
+                  "id": "2b2be2c0-b020-4053-b989-a7bbe5e1b128",
+                  "title": "Denial of Service From Repeated Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly sends requests to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff logins behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 128,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "ecceb616-7227-48bb-b50b-52cd02f439de",
+            "labels": [
+              "Account Details"
+            ],
+            "source": {
+              "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
+            },
+            "target": {
+              "cell": "93dc1206-6bc3-477f-8785-4daa646170c0"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Account Details",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "0ddba480-5a0b-45c8-9dd2-93bdddaff13b",
+                  "title": "Denial of Service From Repeated Access Attempts",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "A malicious actor repeatedly attempts to login to the system, slowing down access for other actors",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff logins behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 131,
+                  "score": ""
+                },
+                {
+                  "id": "403c2bfc-1341-4273-ad9b-f64a7e87be03",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Threat actor intercepts network traffic with the staff member's details ",
+                  "mitigation": "Mitigated - Encrypt all network communication and use transport layer security",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 132,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "1cffb4a2-05f6-4eb2-95d8-e68d072f3a8e",
+            "labels": [
+              "Account Details"
+            ],
+            "source": {
+              "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
+            },
+            "target": {
+              "x": 660,
+              "y": 280
+            },
+            "vertices": [
+              {
+                "x": 540,
+                "y": 250
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
                 "targetMarker": {
                   "name": "classic"
                 },
@@ -3190,8 +3223,35 @@
               "protocol": "",
               "isEncrypted": false,
               "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "04ee03d9-1c13-4165-81f5-1bd811e030f8",
+                  "title": "Adversary in the Middle Attack",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "If a threat actor intercepts the network packets meant for the system, they could edit the intended action to be malicious.",
+                  "mitigation": "Encrypt all network communication and use transport layer security",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 134,
+                  "score": ""
+                },
+                {
+                  "id": "ca65b9ed-ad13-4466-b6f0-85deaa3aeb09",
+                  "title": "Repeated Requests",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "If a threat actor made repeated or large requests to the database, it could slow down or freeze access for other users.",
+                  "mitigation": "Require confirmation for large requests. Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n\nAdditionally, you could put staff logins behind a firewall and only allow access from the local council network or through a secure VPN. However, this is not feasible in the current system as there is a requirement for the website to be publicly available.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 136,
+                  "score": ""
+                }
+              ]
             },
             "id": "52e6ae9b-d6c3-4056-be64-4565345f446f",
             "labels": [
@@ -3207,6 +3267,64 @@
               {
                 "x": 550,
                 "y": 350
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "targetMarker": {
+                  "name": "classic"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "SQL Response",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "b6af1856-d371-4178-8419-477e2c212d28",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 0,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "ccdcd552-a4aa-446e-8192-e3de9ac936c5",
+            "labels": [
+              "SQL Response"
+            ],
+            "source": {
+              "cell": "e19e6ed8-29e4-4562-a2ab-73878d0dc28a"
+            },
+            "target": {
+              "cell": "a669be97-51f8-491a-b1ae-edd84788f3a8"
+            },
+            "vertices": [
+              {
+                "x": 500,
+                "y": 373
               }
             ]
           },
@@ -3266,6 +3384,19 @@
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 125,
+                  "score": ""
+                },
+                {
+                  "id": "f71ac204-31dd-4ddf-9212-04d4aafca13b",
+                  "title": "Spoofed Account Performing Malicious Actions",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Accounts that have been spoofed can perform malicious acts without being able to prove whether the account was stolen by a threat actor.",
+                  "mitigation": "Log all actions taken by actors, including login attempts with the actor's ip address, to ensure that the source of actions can be traced back to the actor that initiated them.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 126,
                   "score": ""
                 }
               ]
@@ -3506,6 +3637,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 125
+    "threatTop": 138
   }
 }
