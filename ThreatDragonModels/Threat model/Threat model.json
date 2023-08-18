@@ -19,16 +19,16 @@
         "cells": [
           {
             "position": {
-              "x": 210,
+              "x": 172.5,
               "y": 150
             },
             "size": {
-              "width": 112.5,
-              "height": 60
+              "width": 150,
+              "height": 80
             },
             "attrs": {
               "text": {
-                "text": "Council Staff\nMember/Admin"
+                "text": "Council Staff/\nSystem Administrator"
               },
               "body": {
                 "stroke": "red",
@@ -42,7 +42,7 @@
             "id": "1a8fe9b6-f15c-48ce-b44c-59ae8bcd84dd",
             "data": {
               "type": "tm.Actor",
-              "name": "Council Staff\nMember/Admin",
+              "name": "Council Staff/\nSystem Administrator",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
