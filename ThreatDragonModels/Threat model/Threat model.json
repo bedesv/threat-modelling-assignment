@@ -1,13 +1,23 @@
 {
-  "version": "2.0.3",
+  "version": "2.0.4",
   "summary": {
-    "title": "Threat model",
-    "owner": "",
+    "title": " Threat Analysis of Council Building Consent Application Management System",
+    "owner": "Bede Skinner-Vennell, Luke Garside, Sam Clark",
     "description": "",
     "id": 0
   },
   "detail": {
-    "contributors": [],
+    "contributors": [
+      {
+        "name": "Bede Skinner-Vennell"
+      },
+      {
+        "name": "Luke Garside"
+      },
+      {
+        "name": "Sam Clark"
+      }
+    ],
     "diagrams": [
       {
         "id": 1,
@@ -1059,7 +1069,7 @@
       },
       {
         "id": 4,
-        "title": "login - updated",
+        "title": "login - firewall",
         "diagramType": "STRIDE",
         "placeholder": "New STRIDE diagram description",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
@@ -2145,7 +2155,8 @@
               "threats": []
             }
           }
-        ]
+        ],
+        "description": "An updated version of the login diagram where staff members can only access the system inside the council's network or using a secure VPN"
       },
       {
         "id": 0,
@@ -3833,7 +3844,7 @@
       },
       {
         "id": 7,
-        "title": "main - updated",
+        "title": "main - authenticated applicants",
         "diagramType": "STRIDE",
         "placeholder": "New STRIDE diagram description",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
@@ -5994,7 +6005,8 @@
               ]
             }
           }
-        ]
+        ],
+        "description": "An updated version of the main diagram where applicants must create an account rather than just using the application ID to access everything"
       },
       {
         "id": 2,
@@ -6946,7 +6958,7 @@
       },
       {
         "id": 9,
-        "title": "admin - updated",
+        "title": "admin - firewall ",
         "diagramType": "STRIDE",
         "placeholder": "New STRIDE diagram description",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
@@ -7919,7 +7931,8 @@
               ]
             }
           }
-        ]
+        ],
+        "description": "An updated version of the admin diagram where staff members can only access the system inside the council's network or using a secure VPN"
       }
     ],
     "diagramTop": 4,
