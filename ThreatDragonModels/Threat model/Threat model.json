@@ -5012,15 +5012,15 @@
               "threats": []
             },
             "id": "74b64c05-fde5-4261-b554-4e3dc09b1308",
+            "labels": [
+              "Username"
+            ],
             "source": {
               "cell": "6b4d500d-1d6a-4fb9-83d9-31ddde8e56d9"
             },
             "target": {
               "cell": "9e839957-1bdc-48c1-8088-8425afdcff40"
             },
-            "labels": [
-              "Username"
-            ],
             "vertices": [
               {
                 "x": 600,
@@ -5057,6 +5057,9 @@
               "threats": []
             },
             "id": "5f506d6b-7563-4562-bb69-7740f6d5684c",
+            "labels": [
+              "Hashed Password"
+            ],
             "source": {
               "cell": "9e839957-1bdc-48c1-8088-8425afdcff40"
             },
@@ -5068,9 +5071,6 @@
                 "x": 630,
                 "y": -10
               }
-            ],
-            "labels": [
-              "Hashed Password"
             ]
           },
           {
@@ -5102,6 +5102,9 @@
               "threats": []
             },
             "id": "b2bfc967-e2a4-4aef-b41a-640157d22aeb",
+            "labels": [
+              "Authentication Token"
+            ],
             "source": {
               "cell": "6b4d500d-1d6a-4fb9-83d9-31ddde8e56d9"
             },
@@ -5113,9 +5116,6 @@
                 "x": 650,
                 "y": 18.5
               }
-            ],
-            "labels": [
-              "Authentication Token"
             ]
           },
           {
@@ -5147,15 +5147,15 @@
               "threats": []
             },
             "id": "5b1e7f17-5764-4c74-8f54-2f881d2557f5",
+            "labels": [
+              "User Details"
+            ],
             "source": {
               "cell": "24e01b3f-8193-40ea-a42a-7cdabed8240f"
             },
             "target": {
               "cell": "9e839957-1bdc-48c1-8088-8425afdcff40"
-            },
-            "labels": [
-              "User Details"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -5186,6 +5186,9 @@
               "threats": []
             },
             "id": "5d1a2edd-dccd-45d6-b2ab-703049fdaf8d",
+            "labels": [
+              "Registration\nConfirmation Email"
+            ],
             "source": {
               "cell": "24e01b3f-8193-40ea-a42a-7cdabed8240f"
             },
@@ -5201,9 +5204,6 @@
                 "x": 210,
                 "y": 370
               }
-            ],
-            "labels": [
-              "Registration\nConfirmation Email"
             ]
           },
           {
@@ -5780,8 +5780,8 @@
                 "text": "Applicant\nLogin"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               }
             },
@@ -5796,8 +5796,61 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "privilegeLevel": "",
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "49a42c84-2e94-4e15-93dd-49647151aaab",
+                  "title": "Stealing Credentials with Fake Login Page",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "A threat actor creates a fake login page resembling the real login page. This is then used to trick users into sharing their login details with the threat actor.",
+                  "mitigation": "Purchase similar domain names so that threat actors can't use them. Use a simple domain name so it's easier for the users to identify.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 160,
+                  "score": ""
+                },
+                {
+                  "id": "7f1b1ee1-6b1d-477c-aa79-3f88434fd7d6",
+                  "title": "Disclosure of Used Usernames",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "When the actor supplies an incorrect or invalid username or password, they can determine whether the username is used in the system because the feedback specifies which field is invalid.",
+                  "mitigation": "Only provide generic feedback stating that the username or password is incorrect.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 161,
+                  "score": ""
+                },
+                {
+                  "id": "3f82af06-be1a-435f-97ff-2bd7795b3bf6",
+                  "title": "Repeated Login Attempts",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Repeated login attempts by an actor use significant resources such as CPU and memory",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 162,
+                  "score": ""
+                },
+                {
+                  "id": "84d40bdf-2542-4bcc-82d7-a91a5d6a1e0b",
+                  "title": "SQL/Code Injection",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "When user inputs are not sanitised and handled correctly by the process, it can lead to malicious actions being performed within the process, leading the threat actor performing actions they don't have the privileges to do.",
+                  "mitigation": "Sanitise user input so that it can't be executed as code.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 163,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -5814,8 +5867,8 @@
                 "text": "Applicant \nRegistration"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
+                "stroke": "red",
+                "strokeWidth": 3,
                 "strokeDasharray": null
               }
             },
@@ -5830,8 +5883,48 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "privilegeLevel": "",
-              "hasOpenThreats": false,
-              "threats": []
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "764c2ed4-9e63-477a-9e60-fe379a0baace",
+                  "title": "Stealing Credentials with Fake Registration Page",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "A threat actor creates a fake registration page resembling the real login page. This is then used to trick users into sharing their details with the threat actor.",
+                  "mitigation": "Purchase similar domain names so that threat actors can't use them. Use a simple domain name so it's easier for the users to identify.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 157,
+                  "score": ""
+                },
+                {
+                  "id": "0244e558-98e4-46b8-b96c-c2d333a7639f",
+                  "title": "Repeated Registration Attempts",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Repeated registration attempts by an actor use significant resources such as CPU and memory",
+                  "mitigation": "Put a limit on the number of requests allowed from a single IP address within a certain time frame. Blacklist users who repeatedly exceed this limit.\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 158,
+                  "score": ""
+                },
+                {
+                  "id": "07716b32-4e53-467f-8ce5-785a6754ab6c",
+                  "title": "SQL/Code Injection",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "When user inputs are not sanitised and handled correctly by the process, it can lead to malicious actions being performed within the process, leading the threat actor performing actions they don't have the privileges to do.",
+                  "mitigation": "Sanitise user input so that it can't be executed as code.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 159,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -5871,7 +5964,34 @@
               "isEncrypted": false,
               "isSigned": false,
               "hasOpenThreats": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "6e654f8c-b345-4032-bdef-6002e6ad0fc3",
+                  "title": "Data Tampering",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "An actor gains access to the authentication store and alters or removes entries",
+                  "mitigation": "Store database credentials in a secure location and not in plain text. Store user credentials in an encrypted form. Again use the least privileged principle. Also only allow read access to the database from the login endpoint.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 164,
+                  "score": ""
+                },
+                {
+                  "id": "adb8fa03-7471-43ed-b445-e2d727b18f1d",
+                  "title": "Visibility of Restricted Data",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Users should not be able to see information about other actors credentials. ",
+                  "mitigation": "Apply the least privileged principle to ensure the minimum required amount data is visible.  ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 165,
+                  "score": ""
+                }
+              ]
             }
           }
         ]
@@ -7804,6 +7924,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 156
+    "threatTop": 165
   }
 }
